@@ -12,7 +12,7 @@ OCLP can play a role here (as described by [@khronokernel](https://github.com/kh
 Regarding Intel modules instead, AirportItlwm doesn't work yet. However, itlwm with Heliport seems to properly work as well as some third party USB Wi-Fi dongles ([reference](https://www.insanelymac.com/forum/topic/356881-pre-release-macos-sonoma/?do=findComment&comment=2805928))
 
 
-I'll write there my "study notes", regarding Wi-Fi support on macOS but there's actually nothing to do here, unless OCLP or Apple decides to reintroduce the support (very unlikely IMHO but let's see):
+I'll write there my "research notes", regarding Wi-Fi support on macOS but there's actually nothing to do here, unless OCLP or Apple decides to reintroduce the support (very unlikely IMHO but let's see):
 
 # Test 1: Inject IO80211FamilyLegacy
 
