@@ -7,6 +7,6 @@ header_pages:
   - topbar/aboutme.markdown
   - topbar/contact.markdown
   - topbar/hackintosh.markdown
-  - topbar/mac-apps.markdown
+  - topbar/mac.markdown
 plugins:
   - jekyll-feed
