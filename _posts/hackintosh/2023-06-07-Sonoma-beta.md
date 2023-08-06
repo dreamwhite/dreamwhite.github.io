@@ -2,7 +2,7 @@
 layout: post
 title: "macOS Sonoma 14 Beta 1"
 date: 2023-06-07 2:36:00 +0200
-categories: macOS
+categories: hackintosh
 ---
 
 As every year during 2023 WWDC Apple announced their new operating system called **macOS 14 code-name Sonoma**.

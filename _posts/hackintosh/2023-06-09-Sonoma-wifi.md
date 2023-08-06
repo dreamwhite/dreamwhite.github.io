@@ -2,7 +2,7 @@
 layout: post
 title: "macOS Sonoma 14 Beta 1 Wifi updates"
 date: 2023-06-07 2:36:00 +0200
-categories: macOS
+categories: hackintosh
 ---
 
 As already said in the [previous post](https://dreamwhite.github.io/macos/2023/06/07/Sonoma-beta.html), Apple decided to completely drop the support for Broadcom based chipset (e.g. BCM94350 and BCM94360, like the Fenvi T919).

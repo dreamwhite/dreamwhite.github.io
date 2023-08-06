@@ -2,7 +2,7 @@
 layout: post
 title: "macOS Ventura 13 Official Release"
 date: 2022-10-27 2:36:00 +0200
-categories: macOS
+categories: hackintosh
 ---
 
 As every year during 2022 WWDC Apple announced their new operating system called **macOS 13 code-name Ventura**.
