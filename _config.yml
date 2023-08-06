@@ -6,5 +6,6 @@ theme: minima
 header_pages:
   - topbar/aboutme.markdown
   - topbar/contact.markdown
+  - topbar/hackintosh.markdown
 plugins:
   - jekyll-feed
