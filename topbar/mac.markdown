@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hackintosh
-permalink: /hackintosh/
+title: Mac
+permalink: /mac/
 ---
 
 This section contains all the post related to Mac category
