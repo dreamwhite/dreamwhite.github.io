@@ -179,7 +179,8 @@ In case you need `AirportBrcmFixup` add also:
 </dict>
 ```
 
-- Add `-amfipassbeta` to your boot arguments (`NVRAM/Add/7C436110-AB2A-4BBB-A880-FE41995C9F82/boot-args`)
+- Add `-amfipassbeta` to your boot arguments (`NVRAM/Add/7C436110-AB2A-4BBB-A880-FE41995C9F82/boot-args`) for loading the kext on Sonoma
+    - Technical background: this is a Lilu plugin that has a `PluginConfiguration` set to run on certain macOS versions. Example [here](https://github.com/acidanthera/AppleALC/blob/c90e10bdfbbc009018c678f41faf6289ee8d840a/AppleALC/kern_start.cpp#L36). Probably this kext hasn't been updated yet to load on Sonoma, but using the beta boot argument, you'll force the load on unsupported macOS versions.
 
 Finally:
 
