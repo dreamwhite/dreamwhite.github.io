@@ -208,11 +208,11 @@ The OS correctly boots and OpenCore correctly loads the kext:
 
 The result is the following: IORegistryExplorer correctly shows IOSkywalkFamily attached to the card itself:
 
-![](assets/posts/sonoma-wifi/sonoma-wifi-ioreg.png)
+![](/assets/posts/sonoma-wifi/sonoma-wifi-ioreg.png)
 
 On macOS Ventura, the Wi-Fi card IORegistryExplorer dump structure is pretty similar to Sonoma:
 
-![](assets/posts/sonoma-wifi/ventura-wifi-ioreg.png)
+![](/assets/posts/sonoma-wifi/ventura-wifi-ioreg.png)
 
 # BUT
 
