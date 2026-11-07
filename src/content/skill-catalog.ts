@@ -1,0 +1,131 @@
+export type SkillCatalogGroup = {
+  title: string;
+  description: string;
+  icon: 'code' | 'web' | 'data' | 'systems' | 'embedded' | 'quality' | 'teaching';
+  skills: { name: string; context: string }[];
+};
+
+export const skillCatalog: SkillCatalogGroup[] = [
+  {
+    title: 'Languages & fundamentals',
+    description: 'Languages used across product work, systems projects, and university practice.',
+    icon: 'code',
+    skills: [
+      { name: 'TypeScript / JavaScript', context: 'Emporion, web applications, integrations' },
+      { name: 'Python', context: 'MQTT bridge, automation, testing, tooling' },
+      { name: 'C / C++', context: 'Embedded and low-level programming work' },
+      { name: 'RISC-V Assembly', context: 'PRG32 cartridges and educational runtime' },
+      { name: 'Swift', context: 'Application development and Apple platforms' },
+      { name: 'Kotlin', context: 'Android application development with Jetpack Compose' },
+      { name: 'Java', context: 'Object-oriented programming and university work' },
+      { name: 'SQL', context: 'Relational data and persistence' },
+      { name: 'Shell', context: 'Linux, macOS, deployment and developer tooling' },
+    ],
+  },
+  {
+    title: 'Web & application engineering',
+    description: 'Building product surfaces and backend systems with explicit boundaries.',
+    icon: 'web',
+    skills: [
+      { name: 'React', context: 'Interfaces, admin surfaces, component systems' },
+      { name: 'Next.js', context: 'Storefronts, static sites, full-stack web applications' },
+      { name: 'Node.js', context: 'Gateways, services, APIs and runtime tooling' },
+      { name: 'Express', context: 'Small HTTP gateways and service layers' },
+      { name: 'Flask', context: 'Python web services and installable catalog tooling' },
+      { name: 'Progressive web apps', context: 'Installable, browser-based product surfaces' },
+      { name: 'REST API design', context: 'Contracts between frontends, gateways and services' },
+      { name: 'Authentication & authorization', context: 'Customer/admin boundaries, JWTs and application security' },
+      { name: 'Event-driven systems', context: 'MQTT integrations, commands and state changes' },
+      { name: 'Object-oriented design', context: 'Application architecture and maintainable code' },
+    ],
+  },
+  {
+    title: 'Data & backend systems',
+    description: 'Modeling data and keeping ownership clear across services and workflows.',
+    icon: 'data',
+    skills: [
+      { name: 'MongoDB', context: 'Emporion persistence and commerce domains' },
+      { name: 'Relational databases', context: 'Schema design, queries and application persistence' },
+      { name: 'SQLite', context: 'Local service data, catalogs and lightweight persistence' },
+      { name: 'Redis', context: 'Caching and safe-to-lose acceleration work' },
+      { name: 'Data modeling', context: 'Catalogs, orders, users and domain state' },
+      { name: 'Stripe integrations', context: 'Checkout, payment state and webhooks' },
+      { name: 'Firebase', context: 'Application data and service integration in a private personal project' },
+      { name: 'Persistence boundaries', context: 'Explicit sources of truth instead of scattered state' },
+    ],
+  },
+  {
+    title: 'Systems & infrastructure',
+    description: 'Running software where networking, deployment and failure modes are part of the work.',
+    icon: 'systems',
+    skills: [
+      { name: 'Linux & macOS', context: 'Development, servers, debugging and automation' },
+      { name: 'Docker & Compose', context: 'Local environments, services and reproducible deployment' },
+      { name: 'Traefik / ingress', context: 'Routing, local HTTPS and service boundaries' },
+      { name: 'Nginx', context: 'Static serving and reverse-proxy setups' },
+      { name: 'VPS & self-hosting', context: 'Personal infrastructure and hosted workloads' },
+      { name: 'Virtual machines', context: 'Multipass, QEMU and isolated Linux environments' },
+      { name: 'TLS and local HTTPS', context: 'Testing real browser, cookie and webhook behavior' },
+      { name: 'CI and release workflows', context: 'Checks, builds and repeatable delivery' },
+      { name: 'GitHub Actions', context: 'Repository checks, packaging and static deployments' },
+      { name: 'Observability basics', context: 'Health checks, structured logs and debugging' },
+    ],
+  },
+  {
+    title: 'Embedded & connected systems',
+    description: 'Connecting firmware, hardware and software without hiding the boundaries between them.',
+    icon: 'embedded',
+    skills: [
+      { name: 'RISC-V / RV32IMAC', context: 'PRG32 educational runtime and cartridges' },
+      { name: 'ESP32-C6', context: 'Native PRG32 hardware target' },
+      { name: 'QEMU', context: 'Desktop execution path for embedded software' },
+      { name: 'ESP-IDF', context: 'ESP32 firmware and native hardware tooling' },
+      { name: 'PlatformIO', context: 'Embedded builds, flashing and board workflows' },
+      { name: 'CMake / Ninja', context: 'Repeatable native and embedded builds' },
+      { name: 'Firmware and cartridge interfaces', context: 'Hardware/software contracts in PRG32' },
+      { name: 'MQTT', context: 'State publication, commands and discovery metadata' },
+      { name: 'Home Assistant', context: 'Entities, automations and device integration' },
+      { name: 'Async transports', context: 'Polling, reconnects and event-driven bridges' },
+    ],
+  },
+  {
+    title: 'Apple, desktop & mobile',
+    description: 'Application and low-level work across Apple platforms, Android, and hardware-adjacent tooling.',
+    icon: 'systems',
+    skills: [
+      { name: 'Swift / SwiftUI', context: 'Apple application development and macOS tooling' },
+      { name: 'iOS application development', context: 'Open-source mobile client contributions' },
+      { name: 'Android / Jetpack Compose', context: 'Offline-first mobile application prototype' },
+      { name: 'OpenCore / EFI', context: 'Bootloader configuration and macOS platform work' },
+      { name: 'ACPI / ASL', context: 'Hardware description, patching and firmware tooling' },
+      { name: 'Property lists and validation', context: 'macOS configuration, EFI tooling and checks' },
+      { name: 'Hardware troubleshooting', context: 'Displays, wireless, power, storage and compatibility' },
+    ],
+  },
+  {
+    title: 'Quality & delivery',
+    description: 'Making software reliable, testable and understandable for the next person who touches it.',
+    icon: 'quality',
+    skills: [
+      { name: 'Functional testing', context: 'Software Quality Assurance in digital health' },
+      { name: 'Selenium', context: 'Browser automation and application testing' },
+      { name: 'TestLink', context: 'Test case management and QA workflows' },
+      { name: 'Debugging and maintenance', context: 'Existing systems, migrations and failure analysis' },
+      { name: 'Git', context: 'Version control, collaboration and project history' },
+      { name: 'Agile / Scrum', context: 'Team-based software delivery practice' },
+      { name: 'Technical documentation', context: 'Writing down decisions, setup and useful behavior' },
+    ],
+  },
+  {
+    title: 'Teaching & communication',
+    description: 'Turning technical ideas into something people can understand and use.',
+    icon: 'teaching',
+    skills: [
+      { name: 'Coding instruction', context: 'Primary and middle-school courses with NOI' },
+      { name: 'Computational thinking', context: 'Breaking problems into practical, teachable steps' },
+      { name: 'Requirements analysis', context: 'Understanding the problem before choosing the implementation' },
+      { name: 'Architecture communication', context: 'Making boundaries and trade-offs legible' },
+      { name: 'Learning through documentation', context: 'Projects, notes and open-source collaboration' },
+    ],
+  },
+];

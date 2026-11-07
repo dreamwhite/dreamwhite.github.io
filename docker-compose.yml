@@ -1,0 +1,86 @@
+name: dreamwhite
+
+services:
+  site-dev:
+    profiles: [dev]
+    image: dreamwhite-site-dev:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    init: true
+    environment:
+      NODE_ENV: development
+      WATCHPACK_POLLING: "true"
+    command: [npm, run, dev, --, --hostname, 0.0.0.0]
+    expose:
+      - "3000"
+    networks:
+      - app
+      - dream_edge
+    volumes:
+      - .:/workspace
+      - site_dev_node_modules:/workspace/node_modules
+      - site_dev_next:/workspace/.next
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: ${DREAM_EDGE_NETWORK:-dream_edge}
+      traefik.http.routers.dreamwhite-dev.rule: Host(`${DREAMWHITE_DOMAIN:-dreamwhite.dream.test}`)
+      traefik.http.routers.dreamwhite-dev.entrypoints: websecure
+      traefik.http.routers.dreamwhite-dev.tls: "true"
+      traefik.http.routers.dreamwhite-dev.middlewares: dream-security-headers@file
+      traefik.http.services.dreamwhite-dev.loadbalancer.server.port: "3000"
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:3000/').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      start_period: 30s
+      retries: 10
+    restart: unless-stopped
+
+  site-prod:
+    profiles: [prod]
+    image: dreamwhite-site-prod:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    init: true
+    read_only: true
+    expose:
+      - "80"
+    networks:
+      - app
+      - dream_edge
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: ${DREAM_EDGE_NETWORK:-dream_edge}
+      traefik.http.routers.dreamwhite-prod.rule: Host(`${DREAMWHITE_DOMAIN:-dreamwhite.dream.test}`)
+      traefik.http.routers.dreamwhite-prod.entrypoints: websecure
+      traefik.http.routers.dreamwhite-prod.tls: "true"
+      traefik.http.routers.dreamwhite-prod.middlewares: dream-security-headers@file
+      traefik.http.services.dreamwhite-prod.loadbalancer.server.port: "80"
+    tmpfs:
+      - /var/cache/nginx:rw,noexec,nosuid,size=16m
+      - /var/run:rw,noexec,nosuid,size=1m
+      - /tmp:rw,noexec,nosuid,size=16m
+    healthcheck:
+      test: [CMD, wget, --quiet, --tries=1, --spider, http://127.0.0.1/]
+      interval: 10s
+      timeout: 5s
+      start_period: 5s
+      retries: 5
+    restart: unless-stopped
+
+networks:
+  app:
+    name: ${DREAMWHITE_APP_NETWORK:-dreamwhite_default}
+  dream_edge:
+    name: ${DREAM_EDGE_NETWORK:-dream_edge}
+    external: true
+
+volumes:
+  site_dev_node_modules:
+    name: ${DREAMWHITE_NODE_MODULES_VOLUME:-dreamwhite_site_dev_node_modules}
+  site_dev_next:
+    name: ${DREAMWHITE_NEXT_VOLUME:-dreamwhite_site_dev_next}

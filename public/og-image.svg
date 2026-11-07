@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0d0d0c"/>
+  <path d="M0 520H1200M0 430H1200M0 340H1200M0 250H1200M0 160H1200M90 0V630M180 0V630M270 0V630M360 0V630M450 0V630M540 0V630M630 0V630M720 0V630M810 0V630M900 0V630M990 0V630M1080 0V630" stroke="#f2f0eb" stroke-opacity=".08"/>
+  <circle cx="1020" cy="120" r="190" fill="none" stroke="#e6a15c" stroke-opacity=".35"/>
+  <circle cx="1020" cy="120" r="120" fill="none" stroke="#e6a15c" stroke-opacity=".25"/>
+  <text x="90" y="120" fill="#e6a15c" font-family="monospace" font-size="18" letter-spacing="3">DREAMWHITE.DEV / 001</text>
+  <text x="90" y="320" fill="#f2f0eb" font-family="Arial, sans-serif" font-size="92" letter-spacing="-6">Software.</text>
+  <text x="90" y="410" fill="#f2f0eb" font-family="Arial, sans-serif" font-size="92" letter-spacing="-6">Systems.</text>
+  <text x="90" y="500" fill="#9c9b95" font-family="monospace" font-size="18">Ivan Cafiero / dreamwhite</text>
+</svg>

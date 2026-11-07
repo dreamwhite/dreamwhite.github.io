@@ -1,0 +1,22 @@
+export const profile = {
+  name: 'Ivan Cafiero',
+  handle: 'dreamwhite',
+  headline: 'I build software. I understand systems.',
+  intro:
+    'Computer Science student and software developer working across web applications, integrations, embedded systems, and infrastructure. I like turning complex ideas into reliable, useful software.',
+  location: 'Naples, Italy',
+  status: 'Computer Science student · UniParthenope',
+  philosophy:
+    'The interface is only the visible edge of a system. I care about the decisions underneath it: boundaries, failure modes, maintainability, and the small details that make software hold up in the real world.',
+  currentFocus: [
+    'Web and backend systems with clear boundaries',
+    'Embedded computing, MQTT, and home automation',
+    'Linux, containers, and self-hosted infrastructure',
+  ],
+} as const;
+
+export const socials = [
+  { label: 'GitHub', value: '@dreamwhite', href: 'https://github.com/dreamwhite' },
+  { label: 'LinkedIn', value: '/in/dreamwhite', href: 'https://www.linkedin.com/in/dreamwhite' },
+  { label: 'Email', value: 'ivancafiero@gmail.com', href: 'mailto:ivancafiero@gmail.com' },
+] as const;
