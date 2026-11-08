@@ -1,7 +1,7 @@
 export type SkillCatalogGroup = {
   title: string;
   description: string;
-  icon: 'code' | 'web' | 'data' | 'systems' | 'embedded' | 'quality' | 'teaching';
+  icon: 'code' | 'web' | 'data' | 'systems' | 'embedded' | 'platform' | 'quality' | 'teaching';
   skills: { name: string; context: string }[];
 };
 
@@ -91,7 +91,7 @@ export const skillCatalog: SkillCatalogGroup[] = [
   {
     title: 'Apple, desktop & mobile',
     description: 'Application and low-level work across Apple platforms, Android, and hardware-adjacent tooling.',
-    icon: 'systems',
+    icon: 'platform',
     skills: [
       { name: 'Swift / SwiftUI', context: 'Apple application development and macOS tooling' },
       { name: 'iOS application development', context: 'Open-source mobile client contributions' },
