@@ -14,16 +14,16 @@ Personal website and Markdown writing archive for Ivan Cafiero (`dreamwhite`).
 ## Local development
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Validation commands:
 
 ```bash
-npm run lint
-npm run typecheck
-npm run build
+pnpm lint
+pnpm typecheck
+pnpm build
 ```
 
 The static output is generated in `out/`.

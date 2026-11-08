@@ -2,6 +2,7 @@
   "name": "dreamwhite.dev",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@12.5.1",
   "scripts": {
     "dev": "tsx watch scripts/dev.ts",
     "validate:content": "tsx scripts/validate-content.ts",

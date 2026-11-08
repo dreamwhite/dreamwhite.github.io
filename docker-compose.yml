@@ -12,7 +12,7 @@ services:
     environment:
       NODE_ENV: development
       WATCHPACK_POLLING: "true"
-    command: [npm, run, dev, --, --hostname, 0.0.0.0]
+    command: [pnpm, run, dev, --, --hostname, 0.0.0.0]
     expose:
       - "3000"
     networks:
