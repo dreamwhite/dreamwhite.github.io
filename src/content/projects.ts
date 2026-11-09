@@ -94,11 +94,11 @@ export const projects: Project[] = [
     title: 'Emporion',
     eyebrow: 'Commerce platform / systems architecture',
     summary:
-      'A TypeScript commerce platform with separate shop and admin frontends, a gateway-led service architecture, and a plugin runtime built for realistic local HTTPS development.',
-    role: 'Independent project · architecture and implementation',
+      'A TypeScript commerce platform I designed and built end to end: separate shop and admin products, a gateway-led service architecture, and an extension runtime for realistic local HTTPS development.',
+    role: 'Solo creator · product, architecture, implementation, infrastructure & quality',
     technologies: ['TypeScript', 'Next.js', 'Node.js', 'MongoDB', 'Docker', 'Stripe'],
     challenge:
-      'Make the storefront, backoffice, domain services, plugin system, and deployment workflow behave like one platform without collapsing their boundaries.',
+      'Make the storefront, backoffice, domain services, plugin system, and deployment workflow behave like one platform without collapsing their boundaries — while keeping every layer understandable and testable.',
     categories: ['product'],
     tier: 'flagship',
     links: [],

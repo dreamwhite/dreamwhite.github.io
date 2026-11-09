@@ -2,41 +2,52 @@ import Link from 'next/link';
 import {
   ArrowLeft,
   Boxes,
-  Code2,
-  Database,
-  GitBranch,
-  KeyRound,
   LayoutDashboard,
   LockKeyhole,
   Network,
-  PackageCheck,
   ShieldCheck,
-  ShoppingBag,
   Store,
-  Workflow,
 } from 'lucide-react';
 import type { Project } from '@/content/projects';
 import { ProjectCaseStudyLayout } from '@/components/project-case-study-layout';
 import { CaseStudySection } from '@/components/case-study-section';
 
 const boundaries = [
-  { label: 'Catalog', detail: 'Products, variants, categories, product types, facets, and media.', icon: ShoppingBag },
-  { label: 'Orders', detail: 'Cart, checkout, invoices, Stripe webhooks, and payment state.', icon: PackageCheck },
-  { label: 'Identity', detail: 'Separate admin and customer sessions, capabilities, and privacy flows.', icon: KeyRound },
-  { label: 'Plugins', detail: 'Registry, release artifacts, and isolated renderer execution.', icon: Boxes },
+  { label: 'Shop', detail: 'The customer-facing surface for browsing products, managing a cart, and moving through checkout.', icon: Store },
+  { label: 'Admin', detail: 'A separate backoffice for catalog, content, media, orders, and the operational work around them.', icon: LayoutDashboard },
+  { label: 'Gateway', detail: 'One public boundary for routing, authentication policy, security headers, and service access.', icon: Network },
+  { label: 'Domain services', detail: 'Auth, catalog, orders, CMS, status, and plugin capabilities with clear ownership.', icon: Boxes },
+];
+
+const services = [
+  ['00', 'API gateway', 'The single public boundary: routing, authentication policy, security headers, and access to the services behind it.'],
+  ['01', 'Auth service', 'Identity, sessions, capabilities, and the separation between customer access and administration.'],
+  ['02', 'Catalog service', 'Products, variants, categories, media, facets, and the product types that make the catalog extensible.'],
+  ['03', 'Orders service', 'Cart and checkout state, invoices, payment transitions, and the webhooks that bring those transitions back into the platform.'],
+  ['04', 'CMS service', 'Pages and content as a proper domain, so editorial data does not leak into storefront or admin code.'],
+  ['05', 'Status service', 'Health and runtime signals that make the state of the platform visible during development and delivery.'],
+  ['06', 'Plugin manager + runner', 'The registry, release artifacts, and controlled execution path for capabilities that extend the core platform.'],
+];
+
+const extensionModel = [
+  ['01', 'Extend the catalog', 'Product types, fields, and renderers can grow without turning every new commerce idea into a storefront rewrite.'],
+  ['02', 'Keep extensions explicit', 'The plugin manager owns registration and release artifacts; the runner keeps execution behind a defined capability boundary.'],
+  ['03', 'Share the contracts', 'Common packages keep configuration, types, validation, and runtime conventions aligned across the monorepo.'],
 ];
 
 const localRuntime = [
-  ['01', 'Real hosts', 'The shop, admin, and API run on separate HTTPS subdomains instead of pretending localhost is production.'],
-  ['02', 'Real sessions', 'Cookie scope, Secure flags, SameSite behavior, and admin/customer boundaries are testable in the browser.'],
-  ['03', 'Real edges', 'Stripe redirects, webhooks, CSP, proxy routing, and service health are exercised through the same ingress model.'],
+  ['01', 'Real hosts', 'Shop, admin, and API use separate HTTPS subdomains, so browser behavior is closer to a deployed system.'],
+  ['02', 'Real sessions', 'Cookie scope, Secure flags, SameSite behavior, and separate admin/customer sessions can be tested where they actually run.'],
+  ['03', 'Real edges', 'Payments, redirects, webhooks, CSP, proxy routing, health checks, and release checks are part of the same loop.'],
 ];
 
 const toc = [
-  { id: 'emporion-overview', label: 'What it is' },
-  { id: 'emporion-boundaries', label: 'Platform boundaries' },
-  { id: 'emporion-local-https', label: 'Local HTTPS' },
-  { id: 'emporion-principles', label: 'Engineering idea' },
+  { id: 'emporion-overview', label: 'Two products, one platform' },
+  { id: 'emporion-boundaries', label: 'Platform surfaces' },
+  { id: 'emporion-services', label: 'Services and ownership' },
+  { id: 'emporion-extension-model', label: 'Extension model' },
+  { id: 'emporion-local-https', label: 'Real local conditions' },
+  { id: 'emporion-result', label: 'The result' },
 ];
 
 export function EmporionProjectPage({ project }: { project: Project }) {
@@ -48,7 +59,7 @@ export function EmporionProjectPage({ project }: { project: Project }) {
           <div className="emporion-hero-grid">
             <div className="emporion-hero-copy">
               <p className="eyebrow"><span className="eyebrow-dot" />{project.eyebrow}</p>
-              <h1>Commerce software<br /><em>with boundaries.</em></h1>
+              <h1>A commerce platform<br /><em>built end to end.</em></h1>
               <p className="emporion-hero-lede">{project.summary}</p>
             </div>
             <div className="emporion-architecture-card" aria-label="Emporion platform architecture">
@@ -72,20 +83,19 @@ export function EmporionProjectPage({ project }: { project: Project }) {
       </section>
 
       <ProjectCaseStudyLayout toc={toc}>
-      <CaseStudySection id="emporion-overview" className="emporion-section" headingClassName="emporion-section-heading" labelClassName="emporion-label" label="What it is" title="A storefront is the visible part. Emporion is the system underneath." shell>
+      <CaseStudySection id="emporion-overview" className="emporion-section emporion-overview-section" headingClassName="emporion-section-heading" labelClassName="emporion-label" label="What it is" title="Commerce is the interface. The platform is the work." shell>
           <div className="emporion-intro-grid">
-            <p className="emporion-lede">Emporion is a production-adjacent commerce platform built as a TypeScript monorepo. The customer shop, admin backoffice, API gateway, domain services, plugin platform, and local deployment stack are separate pieces with explicit contracts between them.</p>
+            <p className="emporion-lede">Emporion is a commerce platform I designed and built from the ground up. The customer shop and the admin backoffice are separate products, but they rely on the same set of rules, services, data, and infrastructure.</p>
             <div className="emporion-detail-stack">
-              <div><span>Frontend</span><p>Next.js storefront for customers and a separate React/Vite admin surface for operations.</p></div>
-              <div><span>Backend</span><p>A single gateway routes public and privileged requests to services that own their domain behavior.</p></div>
-              <div><span>Persistence</span><p>MongoDB remains the source of truth, with Redis used where short-lived acceleration is useful without taking ownership of the domain state.</p></div>
-              <div><span>Services</span><p>Auth, catalog, orders, CMS, status, and plugin capabilities stay independently understandable behind the gateway.</p></div>
-              <div><span>Operations</span><p>Compose, shared ingress, generated environments, release checks, and backup verification are part of the platform rather than afterthoughts.</p></div>
+              <div><span>Product</span><p>Shop and admin solve different jobs without becoming two disconnected applications.</p></div>
+              <div><span>Backend</span><p>The gateway handles the edge; domain services keep the decisions and their data ownership explicit.</p></div>
+              <div><span>Data</span><p>MongoDB remains the source of truth, while Redis is used only for short-lived acceleration.</p></div>
+              <div><span>Runtime</span><p>Docker Compose, HTTPS ingress, health checks, release flows, and backups are part of the platform itself.</p></div>
             </div>
           </div>
       </CaseStudySection>
 
-      <CaseStudySection id="emporion-boundaries" className="emporion-section emporion-surface" headingClassName="emporion-section-heading compact" labelClassName="emporion-label" label="Platform boundaries" title="Each domain has a job. The gateway keeps the edges legible." shell>
+      <CaseStudySection id="emporion-boundaries" className="emporion-section emporion-surface" headingClassName="emporion-section-heading compact" labelClassName="emporion-label" label="Platform surfaces" title="Four surfaces, one flow." shell>
           <div className="emporion-boundaries">
             {boundaries.map(({ label, detail, icon: Icon }) => (
               <div className="emporion-boundary" key={label}>
@@ -97,7 +107,33 @@ export function EmporionProjectPage({ project }: { project: Project }) {
           </div>
       </CaseStudySection>
 
-      <CaseStudySection id="emporion-local-https" className="emporion-section" headingClassName="emporion-section-heading compact" labelClassName="emporion-label" label="Why local HTTPS matters" title="Development that tests the seams, not just the screens." shell>
+      <CaseStudySection id="emporion-services" className="emporion-section" headingClassName="emporion-section-heading compact" labelClassName="emporion-label" label="Services and ownership" title="Each service owns a decision." shell>
+          <div className="emporion-services-intro">
+            <p className="emporion-lede">The gateway is the front door, not a dumping ground. Behind it, each service owns one part of the commerce domain. That keeps the boundaries practical: identity does not own orders, payment state does not leak into the catalog, and the storefront does not need to know how the backend is assembled.</p>
+            <div className="emporion-service-catalog">
+              {services.map(([number, title, text]) => (
+                <div className="emporion-service-catalog-item" key={number}>
+                  <span>{number}</span>
+                  <div><h3>{title}</h3><p>{text}</p></div>
+                </div>
+              ))}
+            </div>
+          </div>
+      </CaseStudySection>
+
+      <CaseStudySection id="emporion-extension-model" className="emporion-section emporion-surface" headingClassName="emporion-section-heading compact" labelClassName="emporion-label" label="Extension model" title="The platform can grow without losing its shape." shell>
+          <div className="emporion-runtime">
+            {extensionModel.map(([number, title, text]) => (
+              <div className="emporion-runtime-item" key={number}>
+                <span>{number}</span>
+                <div><h3>{title}</h3><p>{text}</p></div>
+                <Boxes size={19} />
+              </div>
+            ))}
+          </div>
+      </CaseStudySection>
+
+      <CaseStudySection id="emporion-local-https" className="emporion-section" headingClassName="emporion-section-heading compact" labelClassName="emporion-label" label="Built for real conditions" title="The hard parts are part of development." shell>
           <div className="emporion-runtime">
             {localRuntime.map(([number, title, text]) => (
               <div className="emporion-runtime-item" key={number}>
@@ -109,12 +145,14 @@ export function EmporionProjectPage({ project }: { project: Project }) {
           </div>
       </CaseStudySection>
 
-      <CaseStudySection id="emporion-principles" className="emporion-section emporion-surface emporion-final-section" headingClassName="emporion-section-heading compact" labelClassName="emporion-label" label="The engineering idea" title="Keep the product flexible without making the runtime vague." shell>
-          <div className="emporion-principles">
-            <div><Workflow size={21} /><h3>Contract-led</h3><p>Shared config, typed service boundaries, and gateway policies keep the platform understandable as it grows.</p></div>
-            <div><GitBranch size={21} /><h3>Plugin-ready</h3><p>Product types and renderer capabilities can extend the catalog without rewriting the storefront around every new field.</p></div>
-            <div><Code2 size={21} /><h3>Testable locally</h3><p>Compose, HTTPS, health checks, release flows, and quality gates make infrastructure part of the development loop.</p></div>
-            <div><Database size={21} /><h3>Data ownership</h3><p>Orders, inventory, users, and payment state have an explicit source of truth instead of being scattered across caches.</p></div>
+      <CaseStudySection id="emporion-result" className="emporion-section emporion-surface emporion-final-section" headingClassName="emporion-section-heading compact" labelClassName="emporion-label" label="The result" title="Built by one person, across every layer." shell>
+          <div className="emporion-role-grid">
+            <p className="emporion-lede">Emporion started as an idea for a commerce product and became a full systems exercise. I kept the product, code, infrastructure, and quality work in the same line of sight, so every architectural decision could be tested against an actual user flow.</p>
+            <div className="emporion-detail-stack">
+              <div><span>One owner</span><p>Product decisions, architecture, implementation, infrastructure, security, testing, and delivery all belong to the same project.</p></div>
+              <div><span>Clear seams</span><p>The shop, admin, gateway, services, and extension runtime can evolve without hiding their responsibilities from one another.</p></div>
+              <div><span>Real behavior</span><p>HTTPS, cookies, payments, health checks, release flows, and failure states are part of the experience being built.</p></div>
+            </div>
           </div>
       </CaseStudySection>
       </ProjectCaseStudyLayout>

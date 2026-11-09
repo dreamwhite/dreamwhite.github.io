@@ -241,30 +241,39 @@ html[data-theme='light'] .emporion-page { --emporion-bg: #f0ede7; --emporion-tex
 .emporion-service-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; color: var(--emporion-muted); text-align: center; }
 .emporion-service-row span { padding: 13px 5px; border: 1px solid var(--emporion-line); border-radius: 7px; }
 .emporion-card-bottom span:last-child { color: var(--emporion-accent); }
-.emporion-section { padding: 60px 0; border-top: 1px solid var(--line); }
+.emporion-section { padding: 54px 0; border-top: 1px solid var(--line); }
 .emporion-surface { background: var(--surface); }
 .emporion-section-heading { max-width: 800px; }
 .emporion-section-heading.compact { max-width: 700px; }
 .emporion-label { margin: 0 0 18px; color: var(--accent); font: 11px "SFMono-Regular", Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase; }
-.emporion-section-heading h2 { margin: 0; font-size: clamp(2.15rem, 3.7vw, 3.8rem); font-weight: 500; letter-spacing: -0.07em; line-height: 0.98; }
+.emporion-section-heading h2 { margin: 0; font-size: clamp(2rem, 3.2vw, 3.35rem); font-weight: 500; letter-spacing: -0.065em; line-height: 1; }
 .emporion-intro-grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 12%; margin-top: 40px; }
+.emporion-role-grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 12%; margin-top: 40px; }
+.emporion-services-intro { display: grid; grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr); gap: 9%; margin-top: 34px; }
 .emporion-lede { max-width: 540px; margin: 0; color: var(--text); font-size: 18px; letter-spacing: -0.02em; line-height: 1.55; }
 .emporion-detail-stack { border-top: 1px solid var(--line); }
-.emporion-detail-stack > div { display: grid; grid-template-columns: 115px 1fr; gap: 24px; padding: 17px 0; border-bottom: 1px solid var(--line); }
+.emporion-detail-stack > div { display: grid; grid-template-columns: 125px minmax(0, 1fr); gap: 22px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .emporion-detail-stack span { color: var(--accent); font: 10px "SFMono-Regular", Consolas, monospace; letter-spacing: 0.08em; text-transform: uppercase; }
 .emporion-detail-stack p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
-.emporion-boundaries { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 38px; }
-.emporion-boundary { min-height: 205px; padding: 21px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); }
+.emporion-boundaries { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 34px; border-top: 1px solid var(--line); }
+.emporion-boundary { min-height: 190px; padding: 20px 22px 18px 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; }
+.emporion-boundary + .emporion-boundary { padding-left: 22px; border-left: 1px solid var(--line); }
 .emporion-boundary > svg, .emporion-principles svg { color: var(--accent); }
-.emporion-boundary h3 { margin: 42px 0 8px; font-size: 20px; font-weight: 550; letter-spacing: -0.04em; }
+.emporion-boundary h3 { margin: 34px 0 8px; font-size: 19px; font-weight: 600; letter-spacing: -0.04em; }
 .emporion-boundary p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
-.emporion-runtime { margin-top: 38px; border-top: 1px solid var(--line); }
-.emporion-runtime-item { display: grid; grid-template-columns: 70px 1fr 22px; gap: 25px; align-items: start; padding: 23px 0; border-bottom: 1px solid var(--line); }
+.emporion-runtime { margin-top: 34px; border-top: 1px solid var(--line); }
+.emporion-runtime-item { display: grid; grid-template-columns: 52px minmax(0, 1fr) 22px; gap: 22px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--line); }
 .emporion-runtime-item > span { color: var(--accent); font: 11px "SFMono-Regular", Consolas, monospace; }
-.emporion-runtime-item h3 { margin: 0; font-size: 22px; font-weight: 550; letter-spacing: -0.035em; }
+.emporion-runtime-item h3 { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.035em; }
 .emporion-runtime-item p { max-width: 700px; margin: 6px 0 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
 .emporion-runtime-item > svg { margin-top: 3px; color: var(--faint); }
 .emporion-runtime-item:last-child > svg { color: var(--accent); }
+.emporion-service-catalog { border-top: 1px solid var(--line); }
+.emporion-service-catalog { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; }
+.emporion-service-catalog-item { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 14px; min-height: 132px; align-content: start; padding: 17px 0; border-bottom: 1px solid var(--line); }
+.emporion-service-catalog-item > span { color: var(--accent); font: 11px "SFMono-Regular", Consolas, monospace; }
+.emporion-service-catalog-item h3 { margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -0.035em; }
+.emporion-service-catalog-item p { max-width: 680px; margin: 5px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
 .emporion-final-section { padding-bottom: 80px; }
 .emporion-principles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 38px; }
 .emporion-principles > div { min-height: 200px; padding: 21px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); }

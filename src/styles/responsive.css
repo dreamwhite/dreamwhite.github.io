@@ -108,7 +108,7 @@
   .event-bridge-capabilities { grid-template-columns: repeat(2, 1fr); }
   .emporion-hero-grid { grid-template-columns: 1fr; }
   .emporion-architecture-card { min-height: 330px; max-width: 620px; }
-  .emporion-intro-grid { grid-template-columns: 1fr; gap: 30px; }
+  .emporion-intro-grid, .emporion-role-grid, .emporion-services-intro { grid-template-columns: 1fr; gap: 30px; }
   .emporion-boundaries { grid-template-columns: repeat(2, 1fr); }
   .emporion-principles { grid-template-columns: repeat(2, 1fr); }
   .spotted-train-layout, .spotted-train-section { grid-template-columns: 1fr; gap: 30px; }
@@ -242,7 +242,8 @@
   .emporion-section { padding: 66px 0; }
   .emporion-hero-actions .button { width: 100%; }
   .emporion-detail-stack > div { grid-template-columns: 1fr; gap: 8px; }
-  .emporion-boundaries, .emporion-principles { grid-template-columns: 1fr; }
+  .emporion-boundaries, .emporion-principles, .emporion-service-catalog { grid-template-columns: 1fr; }
+  .emporion-boundary + .emporion-boundary { padding-left: 0; border-left: 0; }
   .emporion-boundary, .emporion-principles > div { min-height: 0; }
   .emporion-runtime-item { grid-template-columns: 45px 1fr; gap: 18px; }
   .emporion-runtime-item > svg { grid-column: 2; grid-row: 1; justify-self: end; }
