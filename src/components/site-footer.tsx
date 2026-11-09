@@ -33,7 +33,10 @@ export function SiteFooter() {
         </div>
         <div className="footer-bottom">
           <span>Selected work, writing, and systems.</span>
-          <Link href="#top">Back to top <ArrowUpRight size={13} /></Link>
+          <div className="footer-bottom-links">
+            <Link href="/nfc/">NFC card <ArrowUpRight size={13} /></Link>
+            <Link href="#top">Back to top <ArrowUpRight size={13} /></Link>
+          </div>
         </div>
       </div>
     </footer>

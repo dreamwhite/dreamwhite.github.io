@@ -13,6 +13,7 @@ const links = [
   { href: '/skills/', label: 'Skills' },
   { href: '/writing/', label: 'Writing' },
   { href: '/resume/', label: 'Resume' },
+  { href: '/nfc/', label: 'NFC' },
 ];
 
 export function SiteHeader() {

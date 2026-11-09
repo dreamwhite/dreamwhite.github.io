@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Cafiero;Ivan;;;
+FN:Ivan Cafiero
+ORG:dreamwhite.dev
+TITLE:Software Developer
+TEL;TYPE=CELL:+393398725807
+EMAIL;TYPE=INTERNET:ivancafiero@gmail.com
+URL:https://dreamwhite.dev
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/dreamwhite
+URL;TYPE=GitHub:https://github.com/dreamwhite
+URL;TYPE=Instagram:https://instagram.com/_ivan_cafiero
+ADR;TYPE=WORK:;;Naples;;;Italy
+END:VCARD

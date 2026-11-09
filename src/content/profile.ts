@@ -17,6 +17,15 @@ export const profile = {
 
 export const socials = [
   { label: 'GitHub', value: '@dreamwhite', href: 'https://github.com/dreamwhite' },
-  { label: 'LinkedIn', value: '/in/dreamwhite', href: 'https://www.linkedin.com/in/dreamwhite' },
+  { label: 'LinkedIn', value: 'Ivan Cafiero', href: 'https://www.linkedin.com/in/dreamwhite' },
   { label: 'Email', value: 'ivancafiero@gmail.com', href: 'mailto:ivancafiero@gmail.com' },
 ] as const;
+
+export const contactCard = {
+  phone: '+39 339 872 5807',
+  phoneHref: 'tel:+393398725807',
+  email: 'ivancafiero@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/dreamwhite',
+  instagram: 'https://instagram.com/_ivan_cafiero',
+  github: 'https://github.com/dreamwhite',
+} as const;
