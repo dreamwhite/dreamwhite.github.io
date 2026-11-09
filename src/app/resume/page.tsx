@@ -33,7 +33,7 @@ export default function ResumePage() {
             <span><MapPin size={15} /><span>{profile.location}</span></span>
             <a href="mailto:ivancafiero@gmail.com"><Mail size={15} /><span><strong>Email</strong><small>ivancafiero@gmail.com</small></span></a>
             <a href="https://github.com/dreamwhite" target="_blank" rel="noreferrer"><GithubMark /><span><strong>GitHub</strong><small>@dreamwhite</small></span></a>
-            <a href="https://www.linkedin.com/in/dreamwhite" target="_blank" rel="noreferrer"><LinkedinMark /><span><strong>LinkedIn</strong><small>/in/dreamwhite</small></span></a>
+            <a href="https://www.linkedin.com/in/dreamwhite" target="_blank" rel="noreferrer"><LinkedinMark /><span><strong>LinkedIn</strong><small>Ivan Cafiero</small></span></a>
           </div>
         </div>
       </header>
