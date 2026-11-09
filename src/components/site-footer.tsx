@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link className="footer-wordmark" href="/" aria-label="dreamwhite home">
-              <span className="footer-wordmark-mark"><Image src="/images/logo.png" alt="" width={32} height={32} /></span>
+              <span className="footer-wordmark-mark"><Image src="/images/logo.webp" alt="" width={32} height={32} /></span>
               <span>dreamwhite.dev</span>
             </Link>
             <p className="footer-note">Software and systems, from Naples.</p>

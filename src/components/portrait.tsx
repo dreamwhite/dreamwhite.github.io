@@ -4,7 +4,7 @@ export function Portrait({ compact = false }: { compact?: boolean }) {
   return (
     <div className={compact ? 'portrait portrait-compact' : 'portrait'}>
       <Image
-        src="/images/portrait.png"
+        src="/images/portrait.webp"
         alt="Portrait of Ivan Cafiero"
         fill
         priority={!compact}

@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "tsx watch scripts/dev.ts",
     "validate:content": "tsx scripts/validate-content.ts",
+    "check:output": "tsx scripts/validate-output.ts",
     "check": "pnpm validate:content && pnpm typecheck && pnpm lint",
     "test": "tsx --test \"src/**/*.test.ts\"",
     "build": "next build",

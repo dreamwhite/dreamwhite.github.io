@@ -46,7 +46,7 @@ export default function NfcPage() {
           <div className="nfc-card-visual">
             <div className="nfc-card-visual-top"><span>DW / 001</span><AtSign size={16} /></div>
             <div className="nfc-portrait">
-              <Image src="/images/portrait.png" alt="Portrait of Ivan Cafiero" fill priority sizes="(max-width: 680px) 72vw, 300px" />
+              <Image src="/images/portrait.webp" alt="Portrait of Ivan Cafiero" fill priority sizes="(max-width: 680px) 72vw, 300px" />
             </div>
             <div className="nfc-card-visual-bottom"><span>SOFTWARE + SYSTEMS</span><span>NAPLES / IT</span></div>
           </div>

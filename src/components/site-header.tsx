@@ -28,7 +28,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="shell header-inner">
         <Link className="wordmark" href="/" onClick={() => setOpen(false)} aria-label="dreamwhite home">
-          <span className="wordmark-mark"><Image src="/images/logo.png" alt="" width={34} height={34} priority /></span>
+          <span className="wordmark-mark"><Image src="/images/logo.webp" alt="" width={34} height={34} priority /></span>
           <span>dreamwhite</span>
         </Link>
 

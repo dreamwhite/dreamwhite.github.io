@@ -41,6 +41,8 @@ jobs:
         run: pnpm lint
       - name: Build static site
         run: pnpm build
+      - name: Validate static output
+        run: pnpm check:output
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:

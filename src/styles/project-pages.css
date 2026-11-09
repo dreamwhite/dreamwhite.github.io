@@ -131,7 +131,7 @@
 .prg32-link-card p { max-width: 300px; margin: 9px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
 
 .event-bridge-page { --bridge-bg: #13201f; --bridge-text: #edf7f3; --bridge-muted: #9cb4ae; --bridge-line: rgba(237, 247, 243, 0.16); --bridge-accent: #68e5c7; --bridge-accent-soft: rgba(104, 229, 199, 0.12); --bridge-console: #1a2a28; background: var(--bg); }
-html[data-theme='light'] .event-bridge-page { --bridge-bg: #e5f0ec; --bridge-text: #16211f; --bridge-muted: #5f706b; --bridge-line: rgba(22, 33, 31, 0.17); --bridge-accent: #147c69; --bridge-accent-soft: rgba(20, 124, 105, 0.11); --bridge-console: #d6e6e1; }
+html[data-theme='light'] .event-bridge-page { --bridge-bg: #e5f0ec; --bridge-text: #16211f; --bridge-muted: #52635f; --bridge-line: rgba(22, 33, 31, 0.17); --bridge-accent: #0f6f5e; --bridge-accent-soft: rgba(15, 111, 94, 0.11); --bridge-console: #d6e6e1; }
 .event-bridge-hero { padding: 30px 0 52px; background: var(--bridge-bg); color: var(--bridge-text); }
 .event-bridge-back-link { margin-top: 0; color: var(--bridge-text); }
 .event-bridge-back-link:hover { color: var(--bridge-accent); }
@@ -190,7 +190,7 @@ html[data-theme='light'] .event-bridge-page { --bridge-bg: #e5f0ec; --bridge-tex
 .event-bridge-cta h3 { max-width: 610px; margin: 0; font-size: clamp(1.8rem, 3.4vw, 3rem); font-weight: 500; letter-spacing: -0.06em; line-height: 1; }
 
 .emporion-page { --emporion-bg: #1b1a18; --emporion-text: #f2f0eb; --emporion-muted: #aaa79e; --emporion-line: rgba(242, 240, 235, 0.16); --emporion-accent: #e6a15c; --emporion-accent-soft: rgba(230, 161, 92, 0.12); --emporion-card: #26231f; background: var(--bg); }
-html[data-theme='light'] .emporion-page { --emporion-bg: #f0ede7; --emporion-text: #191917; --emporion-muted: #686762; --emporion-line: rgba(25, 25, 23, 0.17); --emporion-accent: #a65e22; --emporion-accent-soft: rgba(166, 94, 34, 0.11); --emporion-card: #e6e1d7; }
+html[data-theme='light'] .emporion-page { --emporion-bg: #f0ede7; --emporion-text: #191917; --emporion-muted: #686762; --emporion-line: rgba(25, 25, 23, 0.17); --emporion-accent: #995218; --emporion-accent-soft: rgba(153, 82, 24, 0.11); --emporion-card: #e6e1d7; }
 .emporion-hero { padding: 44px 0 64px; background: var(--emporion-bg); color: var(--emporion-text); }
 .emporion-back-link { margin-top: 0; color: var(--emporion-text); }
 .emporion-back-link:hover { color: var(--emporion-accent); }
@@ -253,7 +253,7 @@ html[data-theme='light'] .emporion-page { --emporion-bg: #f0ede7; --emporion-tex
 .emporion-cta h3 { max-width: 610px; margin: 0; font-size: clamp(1.8rem, 3.4vw, 3rem); font-weight: 500; letter-spacing: -0.06em; line-height: 1; }
 
 .cartridge-store-page { --cartridge-bg: #211f1c; --cartridge-text: #f4f0e8; --cartridge-muted: #b9b1a5; --cartridge-line: rgba(244, 240, 232, 0.17); --cartridge-accent: #d17a36; --cartridge-accent-soft: rgba(209, 122, 54, 0.13); background: var(--bg); }
-html[data-theme='light'] .cartridge-store-page { --cartridge-bg: #e8e0d4; --cartridge-text: #211f1c; --cartridge-muted: #70695f; --cartridge-line: rgba(33, 31, 28, 0.18); --cartridge-accent: #a85b23; --cartridge-accent-soft: rgba(168, 91, 35, 0.12); }
+html[data-theme='light'] .cartridge-store-page { --cartridge-bg: #e8e0d4; --cartridge-text: #211f1c; --cartridge-muted: #625c52; --cartridge-line: rgba(33, 31, 28, 0.18); --cartridge-accent: #8f4d16; --cartridge-accent-soft: rgba(143, 77, 22, 0.12); }
 .cartridge-store-hero { padding: 44px 0 64px; background: var(--cartridge-bg); color: var(--cartridge-text); }
 .cartridge-store-back-link { margin-top: 0; color: var(--cartridge-text); }
 .cartridge-store-back-link:hover { color: var(--cartridge-accent); }
