@@ -8,6 +8,7 @@ Personal website and Markdown writing archive for Ivan Cafiero (`dreamwhite`).
 - React and strict TypeScript
 - Tailwind CSS plus a small custom design system
 - `tsx watch` wrapping the Next.js development server
+- TypeScript 7 for project typechecking, with the TypeScript 6 compatibility API kept side-by-side for ESLint tooling
 - Markdown content in `content/writing/`
 - GitHub Pages deployment through `.github/workflows/deploy.yml`
 
@@ -29,6 +30,8 @@ pnpm build
 ```
 
 `pnpm check` runs the content validator, typecheck and lint together. The same checks run in the Pages workflow before the static export is uploaded.
+
+TypeScript 7 is exposed through the normal `tsc` command. The `typescript` package is intentionally aliased to the TypeScript 6 compatibility build because `typescript-eslint` still requires the TypeScript 6 compiler API; this is the side-by-side setup recommended by the TypeScript team.
 
 The static output is generated in `out/`.
 
