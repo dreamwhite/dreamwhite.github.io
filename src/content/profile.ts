@@ -26,6 +26,6 @@ export const contactCard = {
   phoneHref: 'tel:+393398725807',
   email: 'ivancafiero@gmail.com',
   linkedin: 'https://www.linkedin.com/in/dreamwhite',
-  instagram: 'https://instagram.com/_ivan_cafiero',
+  instagram: 'https://instagram.com/_ivan_cafiero_',
   github: 'https://github.com/dreamwhite',
 } as const;

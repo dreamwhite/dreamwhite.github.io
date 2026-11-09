@@ -34,7 +34,7 @@ const actions: Array<{
   { label: 'Call', detail: contactCard.phone, href: contactCard.phoneHref, icon: Phone, kind: 'secondary' },
   { label: 'Email', detail: contactCard.email, href: `mailto:${contactCard.email}`, icon: Mail, kind: 'secondary' },
   { label: 'LinkedIn', detail: 'Professional profile', href: contactCard.linkedin, icon: BriefcaseBusiness, kind: 'secondary', external: true },
-  { label: 'Instagram', detail: '@_ivan_cafiero', href: contactCard.instagram, icon: Camera, kind: 'secondary', external: true },
+  { label: 'Instagram', detail: '@_ivan_cafiero_', href: contactCard.instagram, icon: Camera, kind: 'secondary', external: true },
   { label: 'GitHub', detail: '@dreamwhite', href: contactCard.github, icon: Code2, kind: 'secondary', external: true },
 ] as const;
 
