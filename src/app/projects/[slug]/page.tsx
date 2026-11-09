@@ -51,7 +51,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const project = getProject(slug);
   if (!project) notFound();
 
-  const ProjectPage = projectPageRegistry[project.slug];
+  const ProjectPage = project.renderer ? projectPageRegistry[project.renderer] : undefined;
   if (ProjectPage) return <ProjectPage project={project} />;
 
   return <GenericProjectPage project={project} />;

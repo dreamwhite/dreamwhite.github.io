@@ -12,6 +12,16 @@ export const projectSlugs = [
 
 export type ProjectSlug = typeof projectSlugs[number];
 
+/** Identifies a composed case-study renderer without coupling route code to content slugs. */
+export type ProjectRenderer =
+  | 'prg32'
+  | 'emporion'
+  | 'event-driven-mqtt'
+  | 'spotted-train'
+  | 'cartridge-store'
+  | 'open-source-systems'
+  | 'linux-server-playbook';
+
 export type Project = {
   slug: ProjectSlug;
   title: string;
@@ -25,6 +35,7 @@ export type Project = {
   tier: ProjectTier;
   path?: string;
   media?: ProjectMediaItem[];
+  renderer?: ProjectRenderer;
   featured?: boolean;
   draft?: boolean;
 };
@@ -75,6 +86,7 @@ export const projects: Project[] = [
       { label: 'Cartridge Store', href: 'https://store.prg32.uniparthenope.it/' },
       { label: 'Construction Kit', href: 'https://kit.prg32.uniparthenope.it/' },
     ],
+    renderer: 'prg32',
     featured: true,
   },
   {
@@ -90,6 +102,7 @@ export const projects: Project[] = [
     categories: ['product'],
     tier: 'flagship',
     links: [],
+    renderer: 'emporion',
     featured: true,
     draft: false,
   },
@@ -108,6 +121,7 @@ export const projects: Project[] = [
     links: [
       { label: 'View on the App Store', href: 'https://apps.apple.com/it/app/spotted-train/id6736531247' },
     ],
+    renderer: 'spotted-train',
     featured: false,
     draft: false,
   },
@@ -124,6 +138,7 @@ export const projects: Project[] = [
     categories: ['systems'],
     tier: 'specialist',
     links: [],
+    renderer: 'event-driven-mqtt',
     featured: true,
     draft: false,
   },
@@ -143,6 +158,7 @@ export const projects: Project[] = [
       { label: 'GitHub profile', href: 'https://github.com/dreamwhite' },
       { label: 'Linux server playbook', href: 'https://github.com/dreamwhite/linux-server-playbook' },
     ],
+    renderer: 'open-source-systems',
   },
   {
     slug: 'linux-server-playbook',
@@ -159,6 +175,7 @@ export const projects: Project[] = [
     links: [
       { label: 'Project repository', href: 'https://github.com/dreamwhite/linux-server-playbook' },
     ],
+    renderer: 'linux-server-playbook',
     featured: false,
     draft: false,
   },
@@ -178,6 +195,7 @@ export const projects: Project[] = [
       { label: 'Cartridge Store', href: 'https://store.prg32.uniparthenope.it/' },
       { label: 'Project repository · development', href: 'https://github.com/dreamwhite/CartridgeStore/tree/development' },
     ],
+    renderer: 'cartridge-store',
     featured: false,
     draft: false,
   },

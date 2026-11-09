@@ -115,7 +115,7 @@ function getWritingHeadings(content: string): WritingHeading[] {
 }
 
 export async function renderMarkdown(content: string) {
-  const rendered = await remark().use(remarkGfm).use(remarkHtml, { allowDangerousHtml: true }).process(content);
+  const rendered = await remark().use(remarkGfm).use(remarkHtml).process(content);
   const headings = getWritingHeadings(content);
   let headingIndex = 0;
   const html = rendered.toString().replace(/<h([1-3])>(.*?)<\/h\1>/g, (fullMatch, level: string, inner: string) => {

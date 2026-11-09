@@ -6,12 +6,12 @@ import { LinuxServerPlaybookProjectPage } from '@/components/linux-server-playbo
 import { OpenSourceSystemsProjectPage } from '@/components/open-source-systems-project-page';
 import { Prg32ProjectPage } from '@/components/prg32-project-page';
 import { SpottedTrainProjectPage } from '@/components/spotted-train-project-page';
-import type { Project, ProjectSlug } from '@/content/projects';
+import type { Project, ProjectRenderer } from '@/content/projects';
 
 export type ProjectPageProps = { project: Project };
 export type ProjectPageComponent = ComponentType<ProjectPageProps>;
 
-/** Maps stable project slugs to their composed case-study renderer. */
+/** Maps content-owned renderer keys to their composed case-study renderer. */
 export const projectPageRegistry = {
   prg32: Prg32ProjectPage,
   emporion: EmporionProjectPage,
@@ -20,4 +20,4 @@ export const projectPageRegistry = {
   'cartridge-store': CartridgeStoreProjectPage,
   'open-source-systems': OpenSourceSystemsProjectPage,
   'linux-server-playbook': LinuxServerPlaybookProjectPage,
-} satisfies Partial<Record<ProjectSlug, ProjectPageComponent>>;
+} satisfies Record<ProjectRenderer, ProjectPageComponent>;
