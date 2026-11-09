@@ -1,10 +1,10 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import type { ProjectCardData } from '@/content/projects';
 import { ProjectCard } from '@/components/project-card';
+import { useCarousel } from '@/hooks/use-carousel';
 
 type ProjectCarouselProps = {
   projects: ProjectCardData[];
@@ -13,47 +13,8 @@ type ProjectCarouselProps = {
 
 /** Accessible, manually controlled project rail shared by the homepage selection. */
 export function ProjectCarousel({ projects, remainingProjects = 0 }: ProjectCarouselProps) {
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [canMovePrevious, setCanMovePrevious] = useState(false);
-  const [canMoveNext, setCanMoveNext] = useState(true);
   const itemCount = projects.length + 1;
-
-  const updateCarouselState = useCallback(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const cards = Array.from(carousel.querySelectorAll<HTMLElement>('[data-project-card]'));
-    const currentOffset = carousel.scrollLeft;
-    const closestIndex = cards.reduce((closest, card, index) => {
-      const closestDistance = Math.abs(cards[closest].offsetLeft - currentOffset);
-      const distance = Math.abs(card.offsetLeft - currentOffset);
-      return distance < closestDistance ? index : closest;
-    }, 0);
-
-    setActiveIndex(closestIndex);
-    setCanMovePrevious(currentOffset > 2);
-    setCanMoveNext(currentOffset < carousel.scrollWidth - carousel.clientWidth - 2);
-  }, []);
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    carousel.addEventListener('scroll', updateCarouselState, { passive: true });
-    window.addEventListener('resize', updateCarouselState);
-    updateCarouselState();
-    return () => {
-      carousel.removeEventListener('scroll', updateCarouselState);
-      window.removeEventListener('resize', updateCarouselState);
-    };
-  }, [updateCarouselState]);
-
-  function move(direction: -1 | 1) {
-    const nextIndex = Math.max(0, Math.min(itemCount - 1, activeIndex + direction));
-    const card = carouselRef.current?.querySelectorAll<HTMLElement>('[data-project-card]')[nextIndex];
-    card?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-  }
+  const { carouselRef, activeIndex, canMovePrevious, canMoveNext, setActiveIndex, move } = useCarousel(itemCount);
 
   return (
     <div className="project-carousel-shell">

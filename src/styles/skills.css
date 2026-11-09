@@ -1,0 +1,49 @@
+.skills-page { padding: 68px 0 110px; }
+.skills-page-main { min-width: 0; }
+.skills-header { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr); gap: 10%; align-items: end; padding-bottom: 58px; border-bottom: 1px solid var(--line-strong); }
+.skills-kicker { margin: 0 0 17px; color: var(--accent); font-size: 12px; font-weight: 650; }
+.skills-header h1 { max-width: 720px; margin: 0; font-size: clamp(3rem, 6vw, 6rem); font-weight: 500; letter-spacing: -0.08em; line-height: 0.91; }
+.skills-intro { max-width: 650px; margin: 25px 0 0; color: var(--muted); font-size: 17px; line-height: 1.6; }
+.skills-map { padding-top: 16px; }
+.skills-map-header { display: block; margin-bottom: 18px; }
+.skills-map-header h2 { max-width: 900px; margin: 0; font-size: clamp(2.4rem, 4.5vw, 4.4rem); font-weight: 500; letter-spacing: -0.08em; line-height: 0.94; }
+.skills-map-header > p { max-width: 700px; margin: 16px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.skills-map-workspace { display: grid; grid-template-columns: minmax(0, 1fr) 285px; gap: 14px; padding: 14px; border: 1px solid var(--line); border-radius: 6px; background: color-mix(in srgb, var(--surface) 72%, transparent); }
+.skills-map-canvas { position: relative; min-height: 480px; overflow: hidden; border: 1px solid var(--line); border-radius: 3px; background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 38%), var(--bg); }
+.skills-map-lines { position: absolute; inset: 0; width: 100%; height: 100%; }
+.skills-map-line { stroke: var(--line-strong); stroke-width: 1; stroke-dasharray: 3 7; transition: stroke 180ms ease, stroke-width 180ms ease; }
+.skills-map-line.active { stroke: var(--accent); stroke-width: 1.7; }
+.skills-map-line-dot { fill: var(--line-strong); transition: fill 180ms ease, r 180ms ease; }
+.skills-map-line-dot.active { fill: var(--accent); }
+.skills-map-core { position: absolute; top: 50%; left: 50%; display: grid; width: 142px; height: 110px; place-content: center; border: 1px solid var(--accent); border-radius: 4px; background: var(--surface-raised); text-align: center; transform: translate(-50%, -50%); }
+.skills-map-core span { color: var(--accent); font: 10px "SFMono-Regular", Consolas, monospace; letter-spacing: 0.12em; }
+.skills-map-core strong { margin-top: 7px; color: var(--text); font-size: 15px; font-weight: 650; letter-spacing: -0.045em; line-height: 1; }
+.skills-map-core small { margin-top: 9px; color: var(--faint); font: 9px "SFMono-Regular", Consolas, monospace; text-transform: uppercase; }
+.skills-map-node { position: absolute; display: flex; width: 164px; min-height: 54px; align-items: center; gap: 9px; padding: 9px 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--text); cursor: pointer; text-align: left; transform: translate(-50%, -50%); transition: border-color 180ms ease, background 180ms ease, transform 180ms ease; }
+.skills-map-node:hover, .skills-map-node.active { border-color: var(--accent); background: var(--surface-raised); transform: translate(-50%, -50%) translateY(-2px); }
+.skills-map-node-icon { display: grid; width: 29px; height: 29px; flex: 0 0 auto; place-items: center; border: 1px solid var(--line-strong); border-radius: 3px; color: var(--accent); }
+.skills-map-node-copy { display: grid; min-width: 0; gap: 3px; }
+.skills-map-node-copy strong { overflow: hidden; font-size: 11px; font-weight: 650; letter-spacing: -0.02em; text-overflow: ellipsis; white-space: nowrap; }
+.skills-map-node-copy small { color: var(--faint); font: 9px "SFMono-Regular", Consolas, monospace; text-transform: uppercase; }
+.skills-map-detail { min-width: 0; padding: 20px 18px; border: 1px solid var(--line); border-radius: 3px; background: var(--surface); }
+.skills-map-detail-heading { display: flex; align-items: center; gap: 10px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.skills-map-detail-icon { display: grid; width: 35px; height: 35px; flex: 0 0 auto; place-items: center; border: 1px solid var(--line-strong); border-radius: 3px; color: var(--accent); }
+.skills-map-detail-heading p { margin: 0; color: var(--text); font-size: 14px; font-weight: 650; letter-spacing: -0.025em; }
+.skills-map-detail-heading span:not(.skills-map-detail-icon) { display: block; margin-top: 4px; color: var(--faint); font: 9px "SFMono-Regular", Consolas, monospace; text-transform: uppercase; }
+.skills-map-detail-description { margin: 16px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.skills-map-detail ul { display: grid; gap: 0; max-height: 318px; margin: 18px 0 0; padding: 0; overflow: auto; list-style: none; }
+.skills-map-detail li { display: grid; grid-template-columns: 8px 1fr; gap: 9px; padding: 10px 0; border-top: 1px solid var(--line); }
+.skills-map-skill-dot { width: 6px; height: 6px; margin-top: 5px; border: 1px solid var(--accent); border-radius: 50%; }
+.skills-map-detail li strong { display: block; color: var(--text); font-size: 12px; font-weight: 600; }
+.skills-map-detail li small { display: block; margin-top: 3px; color: var(--muted); font-size: 11px; line-height: 1.35; }
+.skills-working-style { padding-top: 68px; }
+.skills-working-style-heading { display: block; padding-bottom: 22px; border-bottom: 1px solid var(--line-strong); }
+.skills-working-style-heading h2 { max-width: 800px; margin: 0; font-size: clamp(2.2rem, 4vw, 4rem); font-weight: 500; letter-spacing: -0.075em; line-height: 0.95; }
+.skills-working-style-heading > p { max-width: 700px; margin: 16px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.skills-working-style-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.skills-working-style-item { display: grid; grid-template-columns: 28px 34px 1fr; gap: 12px; align-items: start; min-width: 0; padding: 22px 18px 22px 0; border-bottom: 1px solid var(--line); }
+.skills-working-style-item + .skills-working-style-item { padding-left: 18px; border-left: 1px solid var(--line); }
+.skills-working-style-index { color: var(--accent); font: 10px "SFMono-Regular", Consolas, monospace; }
+.skills-working-style-icon { display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid var(--line-strong); color: var(--accent); }
+.skills-working-style-item h3 { margin: 0; font-size: 17px; font-weight: 650; letter-spacing: -0.035em; }
+.skills-working-style-item p { margin: 7px 0 0; color: var(--muted); font-size: 13px; line-height: 1.45; }

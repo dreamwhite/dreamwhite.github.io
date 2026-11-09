@@ -1,0 +1,36 @@
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  transition: background-color 240ms ease, color 240ms ease;
+}
+
+::selection { background: var(--selection); }
+a { color: inherit; text-decoration: none; }
+button { color: inherit; font: inherit; }
+.site-frame { min-height: 100vh; overflow: clip; }
+.back-to-top { position: fixed; right: 22px; bottom: 22px; z-index: 25; display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid color-mix(in srgb, var(--bg) 30%, var(--text)); border-radius: 50%; background: var(--text); color: var(--bg); cursor: pointer; opacity: 0; pointer-events: none; transform: translateY(9px); visibility: hidden; box-shadow: 0 12px 28px color-mix(in srgb, var(--text) 16%, transparent); transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease, background 180ms ease, color 180ms ease; }
+.back-to-top.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); visibility: visible; }
+.back-to-top:hover, .back-to-top:focus-visible { background: var(--accent); color: var(--text); }
+.back-to-top:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.mono, .meta, .header-note, .project-number, .footer-kicker, .visual-topline, .visual-bottomline { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+
+.site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(18px); }
+.header-inner { height: 70px; display: flex; align-items: center; justify-content: space-between; }
+.wordmark { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 650; letter-spacing: -0.02em; }
+.wordmark-mark { display: block; width: 34px; height: 34px; overflow: hidden; border: 1px solid var(--line-strong); border-radius: 50%; background: #292633; }
+.wordmark-mark img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.desktop-nav { display: flex; align-items: center; gap: 25px; }
+.nav-link { display: inline-flex; align-items: center; gap: 4px; color: var(--muted); font-size: 13px; transition: color 180ms ease; }
+.nav-link:hover, .nav-link.active { color: var(--text); }
+.external-nav-link { color: var(--accent); }
+.icon-button { display: grid; width: 34px; height: 34px; cursor: pointer; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: transparent; transition: border-color 180ms ease, background-color 180ms ease; }
+.icon-button:hover { border-color: var(--line-strong); background: var(--accent-soft); }
+.mobile-actions, .mobile-nav { display: none; }

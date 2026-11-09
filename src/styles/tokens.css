@@ -1,0 +1,48 @@
+@theme inline {
+  --color-page: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+}
+
+@utility shell {
+  width: min(1440px, calc(100% - 80px));
+  margin-inline: auto;
+}
+
+:root {
+  --bg: #0d0d0c;
+  --surface: #141413;
+  --surface-raised: #1a1a18;
+  --text: #f2f0eb;
+  --muted: #9c9b95;
+  --faint: #5f5e59;
+  --line: rgba(242, 240, 235, 0.13);
+  --line-strong: rgba(242, 240, 235, 0.25);
+  --accent: #e6a15c;
+  --accent-soft: rgba(230, 161, 92, 0.12);
+  --selection: rgba(230, 161, 92, 0.3);
+  --contrast-bg: #171716;
+  --contrast-fg: #f2f0eb;
+}
+
+html[data-theme='light'] {
+  --bg: #f3f1ec;
+  --surface: #ebe8e0;
+  --surface-raised: #ffffff;
+  --text: #191917;
+  --muted: #686762;
+  --faint: #9a9890;
+  --line: rgba(25, 25, 23, 0.14);
+  --line-strong: rgba(25, 25, 23, 0.26);
+  --accent: #a65e22;
+  --accent-soft: rgba(166, 94, 34, 0.1);
+  --selection: rgba(166, 94, 34, 0.22);
+  --contrast-bg: #191917;
+  --contrast-fg: #f3f1ec;
+}

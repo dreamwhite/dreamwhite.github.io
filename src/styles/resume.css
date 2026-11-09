@@ -1,0 +1,47 @@
+.resume-page { max-width: 1320px; padding: 42px 0 100px; }
+.resume-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 34px; }
+.resume-kicker { margin: 0; color: var(--muted); font-size: 13px; font-weight: 650; }
+.resume-download-action { display: inline-flex; align-items: center; gap: 10px; padding: 8px 12px 8px 8px; border: 1px solid var(--line-strong); border-radius: 4px; background: var(--surface); color: var(--text); text-align: left; text-decoration: none; transition: border-color 180ms ease, background 180ms ease, transform 180ms ease; }
+.resume-download-action:hover, .resume-download-action:focus-visible { border-color: var(--accent); background: var(--surface-raised); color: var(--text); transform: translateY(-1px); }
+.resume-download-action:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.resume-download-icon { display: grid; width: 31px; height: 31px; place-items: center; border: 1px solid var(--line-strong); color: var(--accent); }
+.resume-download-action span:last-child { display: grid; gap: 1px; }
+.resume-download-action strong { font-size: 12px; font-weight: 650; }
+.resume-download-action small { color: var(--muted); font: 9px "SFMono-Regular", Consolas, monospace; letter-spacing: 0.05em; text-transform: uppercase; }
+.resume-profile { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 32px; padding: 22px 0 26px; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); background: var(--surface); }
+.resume-profile-photo .portrait { min-height: 250px; border-color: var(--line-strong); border-radius: 0; }
+.resume-profile-main { align-self: center; min-width: 0; }
+.resume-profile-label { margin: 0 0 12px; color: var(--muted); font-size: 13px; font-weight: 600; }
+.resume-profile-main h1 { max-width: 860px; margin: 0; font-size: clamp(2.8rem, 5vw, 5.3rem); font-weight: 500; letter-spacing: -0.08em; line-height: 0.9; }
+.resume-role { margin: 14px 0 0; color: var(--text); font-size: 16px; font-weight: 600; letter-spacing: -0.025em; }
+.resume-intro { max-width: 900px; margin: 14px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
+.resume-contact { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 18px; color: var(--muted); font-size: 12px; }
+.resume-contact > a, .resume-contact > span { display: inline-flex; align-items: flex-start; gap: 8px; min-height: 29px; }
+.resume-contact > a > span { display: inline-flex; align-items: baseline; gap: 6px; }
+.resume-contact strong { color: var(--text); font-size: 12px; font-weight: 600; }
+.resume-contact small { color: var(--muted); font: 10px "SFMono-Regular", Consolas, monospace; }
+.resume-contact a:hover { color: var(--text); }
+.resume-contact svg { flex: 0 0 auto; margin-top: 1px; color: var(--accent); }
+.resume-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(250px, 0.65fr); gap: 58px; margin-top: 38px; align-items: start; }
+.resume-section { margin-bottom: 0; padding: 0 0 48px; border-bottom: 1px solid var(--line); background: transparent; box-shadow: none; }
+.resume-section + .resume-section { padding-top: 48px; }
+.resume-sidebar { position: sticky; top: 94px; padding-left: 30px; border-left: 1px solid var(--line); }
+.resume-sidebar .resume-section { position: static; }
+.resume-section-heading { margin-bottom: 24px; }
+.resume-section-label { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; color: var(--faint); }
+.resume-section-label svg { color: var(--accent); }
+.resume-section-label span { color: var(--accent); font-size: 12px; font-weight: 650; }
+.resume-section-heading h2 { max-width: 420px; margin: 0; font-size: 24px; font-weight: 550; letter-spacing: -0.05em; line-height: 1.05; }
+.resume-timeline, .resume-project-list, .resume-skill-list { border-top: 0; }
+.resume-timeline-item { display: grid; grid-template-columns: 110px 1fr; gap: 24px; margin-top: 0; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.resume-period { margin: 2px 0 0; color: var(--faint); font: 11px/1.4 "SFMono-Regular", Consolas, monospace; }
+.resume-timeline-item h3, .resume-project h3 { margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.04em; }
+.resume-organization { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.resume-description { max-width: 620px; margin: 12px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.resume-tag { display: inline-block; margin-top: 12px; color: var(--faint); font-size: 11px; }
+.resume-project { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: end; margin-top: 0; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.resume-project p { max-width: 620px; margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.resume-project .text-link { margin: 0; white-space: nowrap; }
+.resume-skill-row { display: grid; grid-template-columns: 1fr; gap: 6px; margin-top: 0; padding: 15px 0; border-bottom: 1px solid var(--line); }
+.resume-skill-row h3 { margin: 0; font-size: 14px; font-weight: 650; }
+.resume-skill-row p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }

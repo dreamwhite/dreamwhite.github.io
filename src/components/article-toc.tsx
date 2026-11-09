@@ -1,30 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import type { WritingHeading } from '@/lib/content';
+import { useActiveSection } from '@/hooks/use-active-section';
 
 export function ArticleToc({ headings }: { headings: WritingHeading[] }) {
-  const [activeId, setActiveId] = useState(headings[0]?.id ?? '');
-
-  useEffect(() => {
-    const updateActiveHeading = () => {
-      const current = headings.reduce((visibleId, heading) => {
-        const element = document.getElementById(heading.id);
-        return element && element.getBoundingClientRect().top <= 150 ? heading.id : visibleId;
-      }, headings[0]?.id ?? '');
-
-      setActiveId(current);
-    };
-
-    updateActiveHeading();
-    window.addEventListener('scroll', updateActiveHeading, { passive: true });
-    window.addEventListener('resize', updateActiveHeading);
-
-    return () => {
-      window.removeEventListener('scroll', updateActiveHeading);
-      window.removeEventListener('resize', updateActiveHeading);
-    };
-  }, [headings]);
+  const activeId = useActiveSection(headings, 150);
 
   return (
     <nav className="article-toc" aria-label="On this page">
