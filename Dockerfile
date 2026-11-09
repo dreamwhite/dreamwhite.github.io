@@ -2,7 +2,7 @@
 FROM node:22-bookworm-slim AS base
 WORKDIR /workspace
 ENV NEXT_TELEMETRY_DISABLED=1
-RUN npm install --global pnpm@12.5.1
+RUN npm install --global pnpm@12.18.0
 
 FROM base AS dependencies
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
