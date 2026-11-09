@@ -84,6 +84,7 @@
 .prg32-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, 460px); align-items: center; gap: clamp(44px, 8vw, 100px); margin-top: 46px; }
 .prg32-hero-copy h1 { max-width: 700px; margin: 0; font-size: clamp(2.8rem, 5vw, 5.2rem); font-weight: 500; letter-spacing: -0.075em; line-height: 0.94; }
 .prg32-hero-copy h1 em { color: var(--accent); font-style: normal; }
+.prg32-official-name { margin: 14px 0 22px; color: var(--accent); font: 11px "SFMono-Regular", Consolas, monospace; letter-spacing: 0.08em; text-transform: uppercase; }
 .prg32-hero-lede { max-width: 600px; margin: 25px 0 0; color: var(--muted); font-size: 18px; line-height: 1.55; }
 .prg32-hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
 .prg32-hero-actions .button { min-height: 40px; font-size: 12px; }
@@ -104,6 +105,27 @@
 .prg32-fact { display: grid; grid-template-columns: 130px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .prg32-fact span { color: var(--accent); font: 11px "SFMono-Regular", Consolas, monospace; text-transform: uppercase; }
 .prg32-fact p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
+.prg32-contribution-grid { margin-top: 36px; border-top: 1px solid var(--line); }
+.prg32-contribution-row { display: grid; grid-template-columns: 48px minmax(170px, 0.65fr) 1.35fr; gap: 22px; align-items: baseline; padding: 17px 0; border-bottom: 1px solid var(--line); }
+.prg32-contribution-row > span { color: var(--accent); font: 11px "SFMono-Regular", Consolas, monospace; }
+.prg32-contribution-row h3 { margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -0.03em; }
+.prg32-contribution-row p { max-width: 680px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.prg32-credits-section { background: var(--surface); }
+.prg32-credits-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(30px, 7vw, 100px); margin-top: 36px; }
+.prg32-credit-list, .prg32-appearances { border-top: 1px solid var(--line); }
+.prg32-credit-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+.prg32-credit-heading span, .prg32-appearance-top span, .prg32-publication > span { color: var(--accent); font: 10px "SFMono-Regular", Consolas, monospace; letter-spacing: 0.08em; text-transform: uppercase; }
+.prg32-credit-heading strong { color: var(--muted); font-size: 13px; font-weight: 500; }
+.prg32-credit-row { display: grid; grid-template-columns: minmax(150px, 0.8fr) 1fr; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.prg32-credit-row strong { font-size: 15px; font-weight: 600; }
+.prg32-credit-row span { color: var(--muted); font-size: 13px; }
+.prg32-appearance { padding: 15px 0 18px; border-bottom: 1px solid var(--line); }
+.prg32-appearance-top { display: flex; align-items: center; justify-content: space-between; }
+.prg32-appearance-top a { display: inline-grid; color: var(--accent); }
+.prg32-appearance h3 { margin: 14px 0 7px; font-size: 21px; font-weight: 600; letter-spacing: -0.04em; }
+.prg32-appearance p, .prg32-publication p { max-width: 650px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.prg32-publication { padding-top: 20px; }
+.prg32-publication .text-link { margin-top: 14px; color: var(--text); font-size: 13px; }
 .prg32-workflow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 36px; }
 .prg32-workflow-card { min-height: 220px; padding: 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); }
 .prg32-workflow-top { display: flex; align-items: center; justify-content: space-between; color: var(--accent); }

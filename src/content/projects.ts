@@ -75,7 +75,7 @@ export const projects: Project[] = [
     eyebrow: 'Embedded systems / RISC-V education',
     summary:
       'An open-source educational runtime for teaching RISC-V assembly and C through native game cartridges on ESP32-C6 hardware and QEMU.',
-    role: 'Contributor · UniParthenope',
+    role: 'QEMU, documentation, testing & Cartridge Store rewrite · UniParthenope',
     technologies: ['RV32IMAC', 'ESP32-C6', 'C / Assembly', 'QEMU', 'Python'],
     challenge:
       'Make low-level programming tangible without hiding the engineering boundaries: firmware, cartridge ABI, hardware, emulator, and web tooling all need to agree.',

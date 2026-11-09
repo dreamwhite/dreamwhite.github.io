@@ -8,7 +8,7 @@ The website is intentionally complete without inventing personal imagery. Replac
 | Brand logo | `public/images/logo.png` | Header mark, favicon, and browser identity — supplied and integrated |
 | Printable CV PDF | `public/resume/dreamwhite-cv.pdf` | Resume download |
 | Social preview image | `public/og-image.png` | Open Graph and social cards |
-| Project screenshots | `public/images/projects/<slug>/` | Case studies — PRG32 media is already integrated from `riscv-prg32/PRG32` |
+| Project screenshots and field photos | `public/images/projects/<slug>/` | Case studies — PRG32 repository media and user-provided hardware/demo photos are integrated |
 | Architecture diagrams | `public/images/diagrams/<slug>/` | Project case studies |
 
 Do not replace these with stock photography or generated faces. The current UI uses editorial placeholders until the real assets are available.

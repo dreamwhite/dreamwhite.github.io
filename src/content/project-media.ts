@@ -24,4 +24,7 @@ export const prg32Media: ProjectMediaItem[] = [
   { src: '/images/projects/prg32/featured/azzurra-pro-tennis.png', alt: "Azzurra's Pro Tennis Challenge store capture", label: 'Cartridge Store / Azzurra’s Pro Tennis', width: 320, height: 200 },
   { src: '/images/projects/prg32/featured/outbun-napoli97.png', alt: 'Outbun Napoli 97 store capture', label: 'Cartridge Store / Outbun Napoli 97', width: 320, height: 200 },
   { src: '/images/projects/prg32/featured/sensational-soccer.png', alt: 'Sensational Soccer store capture', label: 'Cartridge Store / Sensational Soccer', width: 320, height: 200 },
+  { src: '/images/projects/prg32/field/handheld-cartridge.webp', alt: 'PRG32 cartridge hardware showing a game running on the display', label: 'Hardware / cartridge runtime', width: 2048, height: 1365 },
+  { src: '/images/projects/prg32/field/breadboard-prototype.webp', alt: 'PRG32 display and audio prototype wired on a breadboard', label: 'Hardware / prototype testing', width: 1182, height: 666 },
+  { src: '/images/projects/prg32/field/live-demo-room.webp', alt: 'PRG32 game running on a monitor during a live demonstration', label: 'Public demo / live runtime', width: 480, height: 853 },
 ];

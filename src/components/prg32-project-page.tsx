@@ -14,6 +14,37 @@ const facts = [
   ['Web workflow', 'Cartridge Store and Construction Kit deployments through the browser Web Serial API.'],
 ];
 
+const credits = [
+  ['Raffaele Montella', 'Academic supervisor / project lead'],
+  ['Simone Boscaglia', 'BSc Computer Science student'],
+  ['Ivan Cafiero', 'BSc Computer Science student'],
+  ['Dario Caramiello', 'MSc Computer Science student'],
+  ['Giuseppe Coviello', 'Contributor'],
+];
+
+const contribution = [
+  ['QEMU runtime', 'Made the desktop/emulator path usable for development and testing when the physical board was not available.'],
+  ['Documentation', 'Improved the project documentation around setup, workflows and the relationship between the runtime, cartridges and tools.'],
+  ['Testing', 'Tested the runtime, QEMU path, cartridges, hardware flows and web tooling across the parts of the platform that need to agree.'],
+  ['Cartridge Store rewrite', 'Reworked the Store in the development branch from its earlier Flask path to a Fastify service and Next.js PWA surface.'],
+];
+
+const appearances = [
+  {
+    event: 'IEEE eScience 2026',
+    format: 'Poster + live demo',
+    text: 'PRG32 was presented as part of the Poster & Demo programme in Naples, alongside the paper “A Retro-Gaming Platform for Teaching RISC-V Programming in Higher Education.”',
+    href: 'https://www.escience-conference.org/2026/timetable',
+  },
+  {
+    event: 'Maker Faire Rome 2026',
+    format: 'Live demo session',
+    text: 'A public, hands-on demonstration of the platform, its runtime and the games running on the hardware.',
+  },
+];
+
+const publicationAuthors = 'Raffaele Montella, Simone Boscaglia, Ivan Cafiero, Dario Caramiello, Paola Barra, Iacopo Colonnelli, Marco Lapegna';
+
 const workflow = [
   { number: '01', title: 'Build', text: 'Write a cartridge in RISC-V assembly or C, then package it as a portable .prg32 artifact.', icon: Code2 },
   { number: '02', title: 'Explore', text: 'Use the Construction Kit to make games with blocks, C or assembly, sprites, and sound in the browser.', icon: Wrench },
@@ -41,6 +72,8 @@ const linkDetails = [
 
 const toc = [
   { id: 'prg32-overview', label: 'What it is' },
+  { id: 'prg32-contribution', label: 'My contribution' },
+  { id: 'prg32-credits', label: 'Credits & appearances' },
   { id: 'prg32-platform', label: 'Inside the platform' },
   { id: 'prg32-media', label: 'The system in use' },
   { id: 'prg32-links', label: 'Continue with PRG32' },
@@ -55,6 +88,7 @@ export function Prg32ProjectPage({ project }: { project: Project }) {
           <div className="prg32-hero-grid">
             <div className="prg32-hero-copy">
               <p className="eyebrow"><span className="eyebrow-dot" />PRG32 / embedded education</p>
+              <p className="prg32-official-name">Platform for RISC-V Gaming Development (32-bit)</p>
               <h1>Learn systems<br /><em>by building games.</em></h1>
               <p className="prg32-hero-lede">{project.summary}</p>
               <div className="prg32-hero-actions">
@@ -76,6 +110,41 @@ export function Prg32ProjectPage({ project }: { project: Project }) {
           <div className="prg32-overview-grid">
             <p className="prg32-lede">PRG32 is an open-source platform for teaching RISC-V assembly and C through retro-game cartridges. The code runs on an ESP32-C6 board, or through the project&apos;s desktop QEMU path, with the hardware and software boundary kept visible.</p>
             <div className="prg32-facts">{facts.map(([label, text]) => <div className="prg32-fact" key={label}><span>{label}</span><p>{text}</p></div>)}</div>
+          </div>
+      </CaseStudySection>
+
+      <CaseStudySection id="prg32-contribution" className="prg32-section" headingClassName="prg32-section-heading compact" labelClassName="prg32-label" label="My contribution" title="The parts I helped make work." shell intro={
+        <p className="prg32-gallery-note">My contribution was mostly on the edges where the project becomes usable: getting the emulator path into shape, making the work easier to follow, testing the pieces together and rebuilding the Store surface.</p>
+      }>
+          <div className="prg32-contribution-grid">
+            {contribution.map(([title, text], index) => (
+              <div className="prg32-contribution-row" key={title}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            ))}
+          </div>
+      </CaseStudySection>
+
+      <CaseStudySection id="prg32-credits" className="prg32-section prg32-credits-section" headingClassName="prg32-section-heading compact" labelClassName="prg32-label" label="Credits & public work" title="A shared project, with a visible contribution." shell intro={
+        <p className="prg32-gallery-note">PRG32 is an open-source, open-hardware, non-profit research prototype developed at the University of Naples Parthenope. My work sits inside a broader team effort, so the people and the public moments belong in the case study too.</p>
+      }>
+          <div className="prg32-credits-grid">
+            <div className="prg32-credit-list">
+              <div className="prg32-credit-heading"><span>Project credits</span><strong>University of Naples Parthenope</strong></div>
+              {credits.map(([name, role]) => <div className="prg32-credit-row" key={name}><strong>{name}</strong><span>{role}</span></div>)}
+            </div>
+            <div className="prg32-appearances">
+              {appearances.map((appearance) => (
+                <div className="prg32-appearance" key={appearance.event}>
+                  <div className="prg32-appearance-top"><span>{appearance.format}</span>{appearance.href ? <Link href={appearance.href} target="_blank" rel="noreferrer"><ArrowUpRight size={15} /></Link> : null}</div>
+                  <h3>{appearance.event}</h3>
+                  <p>{appearance.text}</p>
+                </div>
+              ))}
+              <div className="prg32-publication"><span>eScience paper authors</span><p>{publicationAuthors}</p><Link className="text-link" href="https://www.escience-conference.org/2026/papers" target="_blank" rel="noreferrer">View the accepted paper list <ArrowUpRight size={15} /></Link></div>
+            </div>
           </div>
       </CaseStudySection>
 
