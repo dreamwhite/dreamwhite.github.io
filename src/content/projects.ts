@@ -99,7 +99,7 @@ export const projects: Project[] = [
     eyebrow: 'iOS / public academic project',
     summary:
       'An independent iOS transit application for route search, departures, service updates, and frequently used journeys — designed around changing data and imperfect connectivity.',
-    role: 'Product direction · iOS client architecture · collaborative development',
+    role: 'iOS Client Developer · Product Contribution',
     technologies: ['SwiftUI', 'Firebase Cloud Messaging', 'MapKit', 'CoreLocation', 'Async programming'],
     challenge:
       'Make live transit information useful beyond the ideal online scenario: local state, remote services, maps, notifications, and failure handling all need to work together as one mobile experience.',

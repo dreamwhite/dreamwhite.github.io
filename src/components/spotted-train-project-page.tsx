@@ -51,7 +51,7 @@ export function SpottedTrainProjectPage({ project }: { project: Project }) {
           <div className="spotted-train-copy">
             <p className="statement-label">The constraint</p>
             <p>Transit information is only useful if it survives the moments when the network does not. Spotted Train was shaped around live departures, changing service data, and users who still need an answer when remote services are slow or unavailable.</p>
-            <p>I proposed the initial product concept and worked with the team on turning it into an iOS application. My contribution sat at the intersection of product direction, SwiftUI client architecture, data handling, maps, and service integrations.</p>
+            <p>Spotted Train was developed collaboratively in an academic context. I contributed to the initial product direction and focused on the iOS client: SwiftUI architecture, route search, offline-oriented data handling, maps, local persistence, and Firebase notification flows.</p>
             <p>Instead of treating offline behaviour and failure states as edge cases, the app uses cached data, explicit retries, local persistence, and clear UI states as part of the product itself.</p>
           </div>
 
