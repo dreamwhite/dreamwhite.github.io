@@ -21,10 +21,14 @@ pnpm dev
 Validation commands:
 
 ```bash
+pnpm test
+pnpm validate:content
 pnpm lint
 pnpm typecheck
 pnpm build
 ```
+
+`pnpm check` runs the content validator, typecheck and lint together. The same checks run in the Pages workflow before the static export is uploaded.
 
 The static output is generated in `out/`.
 
