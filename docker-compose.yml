@@ -15,7 +15,6 @@ services:
     expose:
       - "3000"
     networks:
-      - app
       - dream_edge
     volumes:
       - .:/workspace
@@ -46,15 +45,16 @@ services:
       target: production
     init: true
     read_only: true
+    security_opt:
+      - no-new-privileges:true
     expose:
       - "80"
     networks:
-      - app
       - dream_edge
     labels:
       traefik.enable: "true"
       traefik.docker.network: ${DREAM_EDGE_NETWORK:-dream_edge}
-      traefik.http.routers.dreamwhite-prod.rule: Host(`${DREAMWHITE_DOMAIN:-dreamwhite.dream.test}`)
+      traefik.http.routers.dreamwhite-prod.rule: Host(`${DREAMWHITE_PROD_DOMAIN:-dreamwhite-prod.dream.test}`)
       traefik.http.routers.dreamwhite-prod.entrypoints: websecure
       traefik.http.routers.dreamwhite-prod.tls: "true"
       traefik.http.routers.dreamwhite-prod.middlewares: dream-security-headers@file
@@ -72,8 +72,6 @@ services:
     restart: unless-stopped
 
 networks:
-  app:
-    name: ${DREAMWHITE_APP_NETWORK:-dreamwhite_default}
   dream_edge:
     name: ${DREAM_EDGE_NETWORK:-dream_edge}
     external: true
