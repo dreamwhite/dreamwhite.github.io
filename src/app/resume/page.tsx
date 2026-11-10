@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { ArrowUpRight, Boxes, BriefcaseBusiness, Mail, MapPin, Wrench } from 'lucide-react';
-import { DownloadCvButton } from '@/components/download-cv-button';
-import { Portrait } from '@/components/portrait';
-import { experience } from '@/content/experience';
-import { profile } from '@/content/profile';
-import { featuredProjects } from '@/content/projects';
-import { skillGroups } from '@/content/skills';
+import { DownloadCvButton } from '../../components/download-cv-button';
+import { Portrait } from '../../components/portrait';
+import { experience } from '../../content/experience';
+import { profile } from '../../content/profile';
+import { featuredProjects } from '../../content/projects';
+import { skillGroups } from '../../content/skills';
 
 export const metadata = { title: 'Resume', description: 'Interactive and print-friendly CV for Ivan Cafiero.' };
 

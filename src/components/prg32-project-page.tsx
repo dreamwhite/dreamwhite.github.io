@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ArrowUpRight, Code2, Gamepad2, MonitorCog, Store, Wrench } from 'lucide-react';
-import type { Project } from '@/content/projects';
-import { prg32Media } from '@/content/project-media';
-import { ProjectCaseStudyLayout } from '@/components/project-case-study-layout';
-import { ProjectMediaGallery } from '@/components/project-media-gallery';
-import { CaseStudySection } from '@/components/case-study-section';
+import type { Project } from '../content/projects';
+import { prg32Media } from '../content/project-media';
+import { ProjectCaseStudyLayout } from '../components/project-case-study-layout';
+import { ProjectMediaGallery } from '../components/project-media-gallery';
+import { CaseStudySection } from '../components/case-study-section';
 
 const facts = [
   ['Runtime', 'Native RV32IMAC machine code with a small init / update / draw cartridge loop.'],

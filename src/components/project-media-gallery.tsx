@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import type { ProjectMediaItem } from '@/content/project-media';
+import type { ProjectMediaItem } from '../content/project-media';
 
-export type { ProjectMediaItem } from '@/content/project-media';
+export type { ProjectMediaItem } from '../content/project-media';
 
 type ProjectMediaGalleryProps = {
   items: ProjectMediaItem[];

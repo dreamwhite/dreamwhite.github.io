@@ -1,5 +1,5 @@
 import { ArrowUpRight, GitBranch, Server, Terminal } from 'lucide-react';
-import type { Project } from '@/content/projects';
+import type { Project } from '../content/projects';
 
 export function ProjectVisual({ project, compact = false }: { project: Project; compact?: boolean }) {
   const icon = project.slug === 'prg32' ? <Server size={18} /> : project.slug === 'open-source-systems' ? <Terminal size={18} /> : <GitBranch size={18} />;

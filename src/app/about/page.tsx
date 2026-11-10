@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-import { PageToc } from '@/components/page-toc';
-import { Portrait } from '@/components/portrait';
-import { profile, socials } from '@/content/profile';
-import { skillGroups } from '@/content/skills';
+import { PageToc } from '../../components/page-toc';
+import { Portrait } from '../../components/portrait';
+import { profile, socials } from '../../content/profile';
+import { skillGroups } from '../../content/skills';
 
 export const metadata = { title: 'About', description: 'About Ivan Cafiero, the developer behind dreamwhite.' };
 

@@ -1,4 +1,4 @@
-import type { ProjectMediaItem } from '@/content/project-media';
+import type { ProjectMediaItem } from '../content/project-media';
 
 export const projectSlugs = [
   'prg32',

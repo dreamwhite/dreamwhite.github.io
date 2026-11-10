@@ -1,12 +1,12 @@
 import type { ComponentType } from 'react';
-import { CartridgeStoreProjectPage } from '@/components/cartridge-store-project-page';
-import { EmporionProjectPage } from '@/components/emporion-project-page';
-import { EventBridgeProjectPage } from '@/components/event-bridge-project-page';
-import { LinuxServerPlaybookProjectPage } from '@/components/linux-server-playbook-project-page';
-import { OpenSourceSystemsProjectPage } from '@/components/open-source-systems-project-page';
-import { Prg32ProjectPage } from '@/components/prg32-project-page';
-import { SpottedTrainProjectPage } from '@/components/spotted-train-project-page';
-import type { Project, ProjectRenderer } from '@/content/projects';
+import { CartridgeStoreProjectPage } from '../components/cartridge-store-project-page';
+import { EmporionProjectPage } from '../components/emporion-project-page';
+import { EventBridgeProjectPage } from '../components/event-bridge-project-page';
+import { LinuxServerPlaybookProjectPage } from '../components/linux-server-playbook-project-page';
+import { OpenSourceSystemsProjectPage } from '../components/open-source-systems-project-page';
+import { Prg32ProjectPage } from '../components/prg32-project-page';
+import { SpottedTrainProjectPage } from '../components/spotted-train-project-page';
+import type { Project, ProjectRenderer } from '../content/projects';
 
 export type ProjectPageProps = { project: Project };
 export type ProjectPageComponent = ComponentType<ProjectPageProps>;

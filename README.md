@@ -7,8 +7,8 @@ Personal website and Markdown writing archive for Ivan Cafiero (`dreamwhite`).
 - Next.js App Router with static export
 - React and strict TypeScript
 - Tailwind CSS plus a small custom design system
-- `tsx watch` wrapping the Next.js development server
-- TypeScript 7 for project typechecking, with the TypeScript 6 compatibility API kept side-by-side for ESLint tooling
+- Next.js Turbopack and Fast Refresh for local development
+- TypeScript 7 for project typechecking
 - Markdown content in `content/writing/`
 - GitHub Pages deployment through `.github/workflows/deploy.yml`
 
@@ -31,7 +31,11 @@ pnpm build
 
 `pnpm check` runs the content validator, typecheck and lint together. The same checks run in the Pages workflow before the static export is uploaded.
 
-TypeScript 7 is exposed through the normal `tsc` command. The `typescript` package is intentionally aliased to the TypeScript 6 compatibility build because `typescript-eslint` still requires the TypeScript 6 compiler API; this is the side-by-side setup recommended by the TypeScript team.
+TypeScript 7 is exposed through the normal `tsc` command. Next.js uses the project-local compiler for its build and typecheck flow; no separate `tsgo` wrapper or compiler alias is required.
+
+ESLint uses the official Next rule plugin with Babel's TypeScript-aware parser. This keeps linting independent from `typescript-eslint`, whose current stable release does not support TypeScript 7 yet; `tsc` remains the single source of truth for type errors.
+
+Writing is rendered from Markdown through an allowlist-based `rehype-sanitize` pipeline. Raw HTML is parsed only where needed for the existing archive, while scripts, event handlers and unsafe URL protocols are removed before the content reaches the page.
 
 The static output is generated in `out/`.
 
@@ -41,7 +45,7 @@ The public-facing project set currently includes PRG32, Emporion, an abstracted 
 
 ## Docker + Dream Platform
 
-The site has no application backend. Development runs the Next.js dev server; production builds the site once and serves the static `out/` directory from Nginx. Both profiles attach only to Dream Platform's external `dream_edge` network for Traefik ingress.
+The site has no application backend. Development runs the Next.js dev server directly with Turbopack; production builds the site once and serves the static `out/` directory from Nginx. Both profiles attach only to Dream Platform's external `dream_edge` network for Traefik ingress.
 
 Start Dream Platform first so that `dream_edge` and its Traefik instance exist:
 

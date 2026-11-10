@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
-import { ArticleToc } from '@/components/article-toc';
-import { getAllWritingPosts, getWritingPost, renderMarkdown } from '@/lib/content';
+import { ArticleToc } from '../../../components/article-toc';
+import { getAllWritingPosts, getWritingPost, renderMarkdown } from '../../../lib/content';
 
 export function generateStaticParams() { return getAllWritingPosts().map((post) => ({ slug: post.slug })); }
 

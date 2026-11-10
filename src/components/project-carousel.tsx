@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
-import type { ProjectCardData } from '@/content/projects';
-import { ProjectCard } from '@/components/project-card';
-import { useCarousel } from '@/hooks/use-carousel';
+import type { ProjectCardData } from '../content/projects';
+import { ProjectCard } from '../components/project-card';
+import { useCarousel } from '../hooks/use-carousel';
 
 type ProjectCarouselProps = {
   projects: ProjectCardData[];

@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { ProjectSectionHeading } from '@/components/project-section-heading';
+import { ProjectSectionHeading } from '../components/project-section-heading';
 
 type CaseStudySectionProps = {
   id: string;

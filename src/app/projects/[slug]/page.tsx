@@ -3,11 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
-import { ExternalLink } from '@/components/external-link';
-import { ProjectVisual } from '@/components/project-visual';
-import { ProjectCaseStudyLayout } from '@/components/project-case-study-layout';
-import { getProject, projects, type Project } from '@/content/projects';
-import { projectPageRegistry } from '@/components/project-page-registry';
+import { ExternalLink } from '../../../components/external-link';
+import { ProjectVisual } from '../../../components/project-visual';
+import { ProjectCaseStudyLayout } from '../../../components/project-case-study-layout';
+import { getProject, projects, type Project } from '../../../content/projects';
+import { projectPageRegistry } from '../../../components/project-page-registry';
 
 export function generateStaticParams() { return projects.map((project) => ({ slug: project.slug })); }
 

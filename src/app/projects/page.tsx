@@ -1,6 +1,6 @@
-import { ProjectsBrowser } from '@/components/projects-browser';
-import { ProjectSystemMap } from '@/components/project-system-map';
-import { projectCards } from '@/content/projects';
+import { ProjectsBrowser } from '../../components/projects-browser';
+import { ProjectSystemMap } from '../../components/project-system-map';
+import { projectCards } from '../../content/projects';
 
 export const metadata = { title: 'Projects', description: 'Selected software, embedded systems, and infrastructure work by dreamwhite.' };
 

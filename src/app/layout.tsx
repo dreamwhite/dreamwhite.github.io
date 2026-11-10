@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { SiteFooter } from '@/components/site-footer';
-import { SiteHeader } from '@/components/site-header';
-import { BackToTop } from '@/components/back-to-top';
+import { SiteFooter } from '../components/site-footer';
+import { SiteHeader } from '../components/site-header';
+import { BackToTop } from '../components/back-to-top';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://dreamwhite.dev'),

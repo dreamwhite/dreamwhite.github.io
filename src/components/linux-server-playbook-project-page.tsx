@@ -8,9 +8,9 @@ import {
   ShieldCheck,
   Terminal,
 } from 'lucide-react';
-import type { Project } from '@/content/projects';
-import { ProjectCaseStudyLayout } from '@/components/project-case-study-layout';
-import { CaseStudySection } from '@/components/case-study-section';
+import type { Project } from '../content/projects';
+import { ProjectCaseStudyLayout } from '../components/project-case-study-layout';
+import { CaseStudySection } from '../components/case-study-section';
 
 const toc = [
   { id: 'playbook-overview', label: 'What it is' },

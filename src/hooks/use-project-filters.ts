@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import type { ProjectCategory } from '@/content/projects';
+import type { ProjectCategory } from '../content/projects';
 
 type FilterableProject = { categories: ProjectCategory[] };
 

@@ -1,5 +1,5 @@
 # Development keeps the source tree mounted by Compose for fast iteration.
-FROM node:22-bookworm-slim AS base
+FROM node:26.13.0-bookworm-slim AS base
 WORKDIR /workspace
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm install --global pnpm@12.18.0

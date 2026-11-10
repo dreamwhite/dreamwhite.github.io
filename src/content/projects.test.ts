@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { projectCards, projects, projectSlugs } from '@/content/projects';
+import { projectCards, projects, projectSlugs } from '../content/projects';
 
 test('the project catalog exposes unique route and card slugs', () => {
   assert.equal(new Set(projectSlugs).size, projectSlugs.length);

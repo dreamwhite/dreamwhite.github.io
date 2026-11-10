@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { ArrowDownRight, ArrowUpRight, Mail } from 'lucide-react';
-import { Portrait } from '@/components/portrait';
-import { ProjectCarousel } from '@/components/project-carousel';
-import { homepageProjectCards } from '@/content/projects';
-import { profile } from '@/content/profile';
+import { Portrait } from '../components/portrait';
+import { ProjectCarousel } from '../components/project-carousel';
+import { homepageProjectCards } from '../content/projects';
+import { profile } from '../content/profile';
 
 export default function HomePage() {
   return (

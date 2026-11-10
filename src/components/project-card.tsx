@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, Boxes, Laptop, Package, Radio, Server, TrainFront } from 'lucide-react';
-import type { ProjectCardData } from '@/content/projects';
+import type { ProjectCardData } from '../content/projects';
 
 function ProjectCardArt({ project }: { project: ProjectCardData }) {
   if (project.slug === 'prg32') {
