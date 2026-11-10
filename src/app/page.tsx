@@ -4,6 +4,9 @@ import { Portrait } from '../components/portrait';
 import { ProjectCarousel } from '../components/project-carousel';
 import { homepageProjectCards } from '../content/projects';
 import { profile } from '../content/profile';
+import { createPageMetadata, defaultDescription } from '../lib/metadata';
+
+export const metadata = createPageMetadata({ description: defaultDescription, path: '/' });
 
 export default function HomePage() {
   return (

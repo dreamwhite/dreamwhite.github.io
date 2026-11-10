@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, ArrowUpRight, Cpu, Terminal } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Page not found',
+  description: 'The requested dreamwhite.dev route could not be found.',
+  robots: { index: false, follow: false },
+};
 
 export default function NotFound() {
   return (

@@ -4,8 +4,9 @@ import { PageToc } from '../../components/page-toc';
 import { Portrait } from '../../components/portrait';
 import { profile, socials } from '../../content/profile';
 import { skillGroups } from '../../content/skills';
+import { createPageMetadata } from '../../lib/metadata';
 
-export const metadata = { title: 'About', description: 'About Ivan Cafiero, the developer behind dreamwhite.' };
+export const metadata = createPageMetadata({ title: 'About', description: 'About Ivan Cafiero, the developer behind dreamwhite.', path: '/about/' });
 
 const toc = [
   { id: 'about-story', label: 'A bit about me' },

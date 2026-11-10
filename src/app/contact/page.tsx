@@ -2,8 +2,9 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { PageToc } from '../../components/page-toc';
 import { socials } from '../../content/profile';
+import { createPageMetadata } from '../../lib/metadata';
 
-export const metadata = { title: 'Contact', description: 'Contact Ivan Cafiero / dreamwhite.' };
+export const metadata = createPageMetadata({ title: 'Contact', description: 'Contact Ivan Cafiero / dreamwhite.', path: '/contact/' });
 
 export default function ContactPage() {
   return (

@@ -1,7 +1,8 @@
 import { getAllWritingPosts } from '../../lib/content';
 import { WritingArchive } from '../../components/writing-archive';
+import { createPageMetadata } from '../../lib/metadata';
 
-export const metadata = { title: 'Writing', description: 'Technical notes on software engineering, systems, macOS, and open source.' };
+export const metadata = createPageMetadata({ title: 'Writing', description: 'Technical notes on software engineering, systems, macOS, and open source.', path: '/writing/' });
 
 export default function WritingPage() {
   const posts = getAllWritingPosts();
