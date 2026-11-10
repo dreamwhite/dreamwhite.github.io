@@ -11,8 +11,7 @@ services:
     init: true
     environment:
       NODE_ENV: development
-      WATCHPACK_POLLING: "true"
-    command: [pnpm, exec, tsx, watch, scripts/dev.ts, --hostname, 0.0.0.0]
+    command: [pnpm, exec, next, dev, --hostname, 0.0.0.0]
     expose:
       - "3000"
     networks:
