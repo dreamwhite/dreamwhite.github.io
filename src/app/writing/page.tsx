@@ -1,5 +1,5 @@
-import { getAllWritingPosts } from '@/lib/content';
-import { WritingArchive } from '@/components/writing-archive';
+import { getAllWritingPosts } from '../../lib/content';
+import { WritingArchive } from '../../components/writing-archive';
 
 export const metadata = { title: 'Writing', description: 'Technical notes on software engineering, systems, macOS, and open source.' };
 

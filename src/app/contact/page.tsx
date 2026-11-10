@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-import { PageToc } from '@/components/page-toc';
-import { socials } from '@/content/profile';
+import { PageToc } from '../../components/page-toc';
+import { socials } from '../../content/profile';
 
 export const metadata = { title: 'Contact', description: 'Contact Ivan Cafiero / dreamwhite.' };
 

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
-import { projects } from '@/content/projects';
-import { getAllWritingPosts } from '@/lib/content';
+import { projects } from '../content/projects';
+import { getAllWritingPosts } from '../lib/content';
 
 export const dynamic = 'force-static';
 

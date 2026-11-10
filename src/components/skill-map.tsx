@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { BriefcaseBusiness, Boxes, Check, Code2, Cpu, Database, Laptop, Server } from 'lucide-react';
-import { skillCatalog, type SkillCatalogGroup } from '@/content/skill-catalog';
+import { skillCatalog, type SkillCatalogGroup } from '../content/skill-catalog';
 
 const skillIcons = {
   code: Code2,

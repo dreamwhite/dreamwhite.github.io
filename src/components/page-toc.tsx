@@ -1,6 +1,6 @@
 'use client';
 
-import { useActiveSection } from '@/hooks/use-active-section';
+import { useActiveSection } from '../hooks/use-active-section';
 
 export type PageTocItem = {
   id: string;

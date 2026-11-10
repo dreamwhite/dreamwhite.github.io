@@ -1,5 +1,5 @@
-import { experience } from '@/content/experience';
-import { PageToc } from '@/components/page-toc';
+import { experience } from '../../content/experience';
+import { PageToc } from '../../components/page-toc';
 
 export const metadata = { title: 'Experience', description: 'Education, collaborative projects, and engineering practice.' };
 

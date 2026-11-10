@@ -13,7 +13,7 @@ import {
   UserRoundPlus,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { contactCard } from '@/content/profile';
+import { contactCard } from '../../content/profile';
 
 export const metadata = {
   title: 'Contact card',

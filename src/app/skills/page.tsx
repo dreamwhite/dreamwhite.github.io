@@ -1,5 +1,5 @@
-import { SkillMap } from '@/components/skill-map';
-import { SkillsWorkingStyle } from '@/components/skills-working-style';
+import { SkillMap } from '../../components/skill-map';
+import { SkillsWorkingStyle } from '../../components/skills-working-style';
 
 export const metadata = { title: 'Skills', description: 'Skills and working areas demonstrated across Ivan Cafiero’s software and systems projects.' };
 

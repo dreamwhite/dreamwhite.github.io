@@ -1,8 +1,8 @@
 'use client';
 
-import { ProjectCard } from '@/components/project-card';
-import { projectFilters, type ProjectCardData } from '@/content/projects';
-import { useProjectFilters } from '@/hooks/use-project-filters';
+import { ProjectCard } from '../components/project-card';
+import { projectFilters, type ProjectCardData } from '../content/projects';
+import { useProjectFilters } from '../hooks/use-project-filters';
 
 /** Interactive project index that filters the compact card projection, not full case-study data. */
 export function ProjectsBrowser({ projects }: { projects: ProjectCardData[] }) {

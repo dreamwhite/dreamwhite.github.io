@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { PageToc, type PageTocItem } from '@/components/page-toc';
+import { PageToc, type PageTocItem } from '../components/page-toc';
 
 type ProjectCaseStudyLayoutProps = {
   toc: PageTocItem[];

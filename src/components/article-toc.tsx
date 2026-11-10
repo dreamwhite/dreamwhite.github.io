@@ -1,7 +1,7 @@
 'use client';
 
-import type { WritingHeading } from '@/lib/content';
-import { useActiveSection } from '@/hooks/use-active-section';
+import type { WritingHeading } from '../lib/content';
+import { useActiveSection } from '../hooks/use-active-section';
 
 export function ArticleToc({ headings }: { headings: WritingHeading[] }) {
   const activeId = useActiveSection(headings, 150);

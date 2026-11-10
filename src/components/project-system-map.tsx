@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Boxes, Cpu, Laptop, Server, Smartphone, Wrench } from 'lucide-react';
-import type { ProjectCardData, ProjectCategory } from '@/content/projects';
+import type { ProjectCardData, ProjectCategory } from '../content/projects';
 
 type MapNode = {
   id: ProjectCategory;

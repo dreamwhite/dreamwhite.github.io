@@ -12,9 +12,9 @@ import {
   RefreshCw,
   SlidersHorizontal,
 } from 'lucide-react';
-import type { Project } from '@/content/projects';
-import { ProjectCaseStudyLayout } from '@/components/project-case-study-layout';
-import { CaseStudySection } from '@/components/case-study-section';
+import type { Project } from '../content/projects';
+import { ProjectCaseStudyLayout } from '../components/project-case-study-layout';
+import { CaseStudySection } from '../components/case-study-section';
 
 const pipeline = [
   { label: 'Device layer', detail: 'private controller', icon: Cpu },

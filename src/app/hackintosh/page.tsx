@@ -10,8 +10,8 @@ import {
   Terminal,
   Wrench,
 } from 'lucide-react';
-import { ProjectCaseStudyLayout } from '@/components/project-case-study-layout';
-import { CaseStudySection } from '@/components/case-study-section';
+import { ProjectCaseStudyLayout } from '../../components/project-case-study-layout';
+import { CaseStudySection } from '../../components/case-study-section';
 
 export const metadata = {
   title: 'Eggintosh / Hackintosh work',

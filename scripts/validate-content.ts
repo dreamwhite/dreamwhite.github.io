@@ -1,6 +1,6 @@
 import { existsSync } from 'node:fs';
 import path from 'node:path';
-import { projectSlugs, projects, projectCards } from '@/content/projects';
+import { projectSlugs, projects, projectCards } from '../src/content/projects';
 
 const errors: string[] = [];
 const projectSlugSet = new Set(projects.map((project) => project.slug));

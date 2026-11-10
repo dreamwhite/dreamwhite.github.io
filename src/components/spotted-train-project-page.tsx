@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, ArrowUpRight, BellRing, MapPinned, WifiOff } from 'lucide-react';
-import type { Project } from '@/content/projects';
-import { ProjectCaseStudyLayout } from '@/components/project-case-study-layout';
+import type { Project } from '../content/projects';
+import { ProjectCaseStudyLayout } from '../components/project-case-study-layout';
 
 const contributionAreas = [
   {
