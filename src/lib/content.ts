@@ -4,7 +4,10 @@ import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
-import remarkHtml from 'remark-html';
+import remarkRehype from 'remark-rehype';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
+import rehypeStringify from 'rehype-stringify';
 
 const writingDirectory = path.join(process.cwd(), 'content', 'writing');
 
@@ -22,6 +25,14 @@ export type WritingHeading = {
   id: string;
   label: string;
   level: number;
+};
+
+const markdownSanitizeSchema = {
+  ...defaultSchema,
+  protocols: {
+    ...defaultSchema.protocols,
+    href: ['http', 'https', 'mailto'],
+  },
 };
 
 function toDateString(value: unknown) {
@@ -115,7 +126,13 @@ function getWritingHeadings(content: string): WritingHeading[] {
 }
 
 export async function renderMarkdown(content: string) {
-  const rendered = await remark().use(remarkGfm).use(remarkHtml).process(content);
+  const rendered = await remark()
+    .use(remarkGfm)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeSanitize, markdownSanitizeSchema)
+    .use(rehypeStringify)
+    .process(content);
   const headings = getWritingHeadings(content);
   let headingIndex = 0;
   const html = rendered.toString().replace(/<h([1-3])>(.*?)<\/h\1>/g, (fullMatch, level: string, inner: string) => {
