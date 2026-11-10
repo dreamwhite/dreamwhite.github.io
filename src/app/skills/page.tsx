@@ -1,7 +1,8 @@
 import { SkillMap } from '../../components/skill-map';
 import { SkillsWorkingStyle } from '../../components/skills-working-style';
+import { createPageMetadata } from '../../lib/metadata';
 
-export const metadata = { title: 'Skills', description: 'Skills and working areas demonstrated across Ivan Cafiero’s software and systems projects.' };
+export const metadata = createPageMetadata({ title: 'Skills', description: 'Skills and working areas demonstrated across Ivan Cafiero’s software and systems projects.', path: '/skills/' });
 
 export default function SkillsPage() {
   return (

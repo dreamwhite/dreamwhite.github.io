@@ -4,13 +4,14 @@ import { ArrowLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { ArticleToc } from '../../../components/article-toc';
 import { getAllWritingPosts, getWritingPost, renderMarkdown } from '../../../lib/content';
+import { createPageMetadata } from '../../../lib/metadata';
 
 export function generateStaticParams() { return getAllWritingPosts().map((post) => ({ slug: post.slug })); }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = getWritingPost(slug);
-  return post ? { title: post.title, description: post.excerpt } : {};
+  return post ? createPageMetadata({ title: post.title, description: post.excerpt, path: `/writing/${post.slug}/` }) : {};
 }
 
 export default async function WritingPostPage({ params }: { params: Promise<{ slug: string }> }) {

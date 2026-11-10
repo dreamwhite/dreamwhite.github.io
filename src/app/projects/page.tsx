@@ -1,8 +1,9 @@
 import { ProjectsBrowser } from '../../components/projects-browser';
 import { ProjectSystemMap } from '../../components/project-system-map';
 import { projectCards } from '../../content/projects';
+import { createPageMetadata } from '../../lib/metadata';
 
-export const metadata = { title: 'Projects', description: 'Selected software, embedded systems, and infrastructure work by dreamwhite.' };
+export const metadata = createPageMetadata({ title: 'Projects', description: 'Selected software, embedded systems, and infrastructure work by dreamwhite.', path: '/projects/' });
 
 export default function ProjectsPage() {
   return (

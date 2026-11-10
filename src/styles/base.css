@@ -30,7 +30,9 @@ button { color: inherit; font: inherit; }
 .desktop-nav { display: flex; align-items: center; gap: 25px; }
 .nav-link { display: inline-flex; align-items: center; gap: 4px; color: var(--muted); font-size: 13px; transition: color 180ms ease; }
 .nav-link:hover, .nav-link.active { color: var(--text); }
+.nav-link:focus-visible, .mobile-nav-link:focus-visible, .text-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .external-nav-link { color: var(--accent); }
 .icon-button { display: grid; width: 34px; height: 34px; cursor: pointer; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: transparent; transition: border-color 180ms ease, background-color 180ms ease; }
 .icon-button:hover { border-color: var(--line-strong); background: var(--accent-soft); }
+.icon-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .mobile-actions, .mobile-nav { display: none; }

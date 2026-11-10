@@ -12,11 +12,13 @@ import {
 } from 'lucide-react';
 import { ProjectCaseStudyLayout } from '../../components/project-case-study-layout';
 import { CaseStudySection } from '../../components/case-study-section';
+import { createPageMetadata } from '../../lib/metadata';
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Eggintosh / Hackintosh work',
   description: 'Firmware, ACPI, diagnostics and OpenCore tooling from Ivan Cafiero’s public Eggintosh work.',
-};
+  path: '/hackintosh/',
+});
 
 const toc = [
   { id: 'hackintosh-about', label: 'Why I worked on it' },

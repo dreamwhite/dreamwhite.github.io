@@ -269,6 +269,7 @@ section[id], div[id], header[id] { scroll-margin-top: 110px; }
 .timeline-org { margin: 5px 0 0; color: var(--accent); font-size: 13px; }
 .timeline-description { margin: 0; color: var(--muted); font-size: 15px; }
 .contact-grid { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 12%; }
+.contact-availability { margin: 0 0 20px !important; color: var(--accent) !important; font: 11px "SFMono-Regular", Consolas, monospace; letter-spacing: 0.08em; text-transform: uppercase; }
 .contact-copy h2 { margin: 0; font-size: clamp(2.7rem, 6vw, 6rem); font-weight: 500; letter-spacing: -0.09em; line-height: 0.9; }
 .contact-copy p { max-width: 370px; margin: 28px 0 0; color: var(--muted); }
 .contact-links { border-top: 1px solid var(--line); }

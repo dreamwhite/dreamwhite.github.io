@@ -110,6 +110,8 @@ The local edge and the static preview have different owners for HTTP policy:
 
 The current static export contains Next.js bootstrap scripts and the inline theme initialiser. A strict CSP cannot be added safely by copying a generic header: it would need a deliberate hash/allowlist strategy for generated inline content or a separate refactor of the theme bootstrap. The repository therefore does not claim a CSP that it cannot enforce consistently. HSTS is likewise an edge/platform policy and must be verified on the public domain rather than inferred from the local preview.
 
+The route metadata, static-output checks, and post-deploy SEO checklist are documented in [`docs/seo-audit.md`](docs/seo-audit.md).
+
 Useful read-only checks:
 
 ```bash

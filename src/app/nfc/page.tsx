@@ -14,12 +14,9 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { contactCard } from '../../content/profile';
+import { createPageMetadata } from '../../lib/metadata';
 
-export const metadata = {
-  title: 'Contact card',
-  description: 'Contact Ivan Cafiero — software developer and creator of dreamwhite.dev.',
-  alternates: { canonical: 'https://dreamwhite.dev/nfc' },
-};
+export const metadata = createPageMetadata({ title: 'Contact card', description: 'Contact Ivan Cafiero — software developer and creator of dreamwhite.dev.', path: '/nfc/' });
 
 const actions: Array<{
   label: string;

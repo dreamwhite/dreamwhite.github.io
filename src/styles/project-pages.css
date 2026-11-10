@@ -125,6 +125,14 @@
 .prg32-appearance h3 { margin: 14px 0 7px; font-size: 21px; font-weight: 600; letter-spacing: -0.04em; }
 .prg32-appearance p, .prg32-publication p { max-width: 650px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
 .prg32-publication { padding-top: 20px; }
+.prg32-publication-list { display: grid; gap: 10px; margin-top: 16px; }
+.prg32-publication-link { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 0; border-top: 1px solid var(--line); color: var(--text); text-decoration: none; transition: color 180ms ease; }
+.prg32-publication-link:last-child { border-bottom: 1px solid var(--line); }
+.prg32-publication-link:hover { color: var(--accent); }
+.prg32-publication-link > span { display: grid; gap: 5px; }
+.prg32-publication-link strong { max-width: 520px; font-size: 14px; font-weight: 600; line-height: 1.35; }
+.prg32-publication-link small { color: var(--muted); font-size: 12px; }
+.prg32-publication-link > svg { flex: 0 0 auto; color: var(--accent); }
 .prg32-publication .text-link { margin-top: 14px; color: var(--text); font-size: 13px; }
 .prg32-workflow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 36px; }
 .prg32-workflow-card { min-height: 220px; padding: 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); }

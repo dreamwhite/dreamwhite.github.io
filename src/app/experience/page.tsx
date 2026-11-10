@@ -1,7 +1,8 @@
 import { experience } from '../../content/experience';
 import { PageToc } from '../../components/page-toc';
+import { createPageMetadata } from '../../lib/metadata';
 
-export const metadata = { title: 'Experience', description: 'Education, collaborative projects, and engineering practice.' };
+export const metadata = createPageMetadata({ title: 'Experience', description: 'Education, collaborative projects, and engineering practice.', path: '/experience/' });
 
 export default function ExperiencePage() {
   return (

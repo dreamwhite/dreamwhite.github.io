@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, ArrowUpRight, Code2, Gamepad2, MonitorCog, Store, Wrench } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Code2, FileText, Gamepad2, MonitorCog, Store, Wrench } from 'lucide-react';
 import type { Project } from '../content/projects';
 import { prg32Media } from '../content/project-media';
 import { ProjectCaseStudyLayout } from '../components/project-case-study-layout';
@@ -40,6 +40,7 @@ const appearances = [
     event: 'Maker Faire Rome 2026',
     format: 'Live demo session',
     text: 'A public, hands-on demonstration of the platform, its runtime and the games running on the hardware.',
+    href: 'https://makerfairerome.eu/',
   },
 ];
 
@@ -88,7 +89,7 @@ export function Prg32ProjectPage({ project }: { project: Project }) {
           <div className="prg32-hero-grid">
             <div className="prg32-hero-copy">
               <p className="eyebrow"><span className="eyebrow-dot" />PRG32 / embedded education</p>
-              <p className="prg32-official-name">Platform for RISC-V Gaming Development (32-bit)</p>
+              <p className="prg32-official-name">PRG32 - Platform for RISC-V Gaming development (32 bit)</p>
               <h1>Learn systems<br /><em>by building games.</em></h1>
               <p className="prg32-hero-lede">{project.summary}</p>
               <div className="prg32-hero-actions">
@@ -143,7 +144,21 @@ export function Prg32ProjectPage({ project }: { project: Project }) {
                   <p>{appearance.text}</p>
                 </div>
               ))}
-              <div className="prg32-publication"><span>eScience paper authors</span><p>{publicationAuthors}</p><Link className="text-link" href="https://www.escience-conference.org/2026/papers" target="_blank" rel="noreferrer">View the accepted paper list <ArrowUpRight size={15} /></Link></div>
+              <div className="prg32-publication">
+                <span>Publications</span>
+                <p>{publicationAuthors}</p>
+                <div className="prg32-publication-list">
+                  <a className="prg32-publication-link" href="/documents/prg32-escience-2026.pdf" target="_blank" rel="noreferrer">
+                    <span><strong>PRG32: A Retro-Gaming Platform for Teaching RISC-V Programming in Higher Education</strong><small>eScience 2026 · paper PDF</small></span>
+                    <FileText size={18} />
+                  </a>
+                  <a className="prg32-publication-link" href="/documents/prg32-level-up-computer-architecture.pdf" target="_blank" rel="noreferrer">
+                    <span><strong>Level Up Computer Architecture Courses: Native RISC-V Coding with PRG32</strong><small>PRG32 education paper · PDF</small></span>
+                    <FileText size={18} />
+                  </a>
+                </div>
+                <Link className="text-link" href="https://www.escience-conference.org/2026/papers" target="_blank" rel="noreferrer">View the official accepted paper list <ArrowUpRight size={15} /></Link>
+              </div>
             </div>
           </div>
       </CaseStudySection>

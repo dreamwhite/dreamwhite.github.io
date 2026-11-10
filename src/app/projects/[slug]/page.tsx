@@ -8,13 +8,14 @@ import { ProjectVisual } from '../../../components/project-visual';
 import { ProjectCaseStudyLayout } from '../../../components/project-case-study-layout';
 import { getProject, projects, type Project } from '../../../content/projects';
 import { projectPageRegistry } from '../../../components/project-page-registry';
+import { createPageMetadata } from '../../../lib/metadata';
 
 export function generateStaticParams() { return projects.map((project) => ({ slug: project.slug })); }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const project = getProject(slug);
-  return project ? { title: project.title, description: project.summary } : {};
+  return project ? createPageMetadata({ title: project.title, description: project.summary, path: `/projects/${project.slug}/` }) : {};
 }
 
 function GenericProjectPage({ project }: { project: Project }) {
