@@ -40,6 +40,7 @@ const appearances = [
     event: 'Maker Faire Rome 2026',
     format: 'Live demo session',
     text: 'A public, hands-on demonstration of the platform, its runtime and the games running on the hardware.',
+    href: 'https://makerfairerome.eu/',
   },
 ];
 
@@ -88,7 +89,7 @@ export function Prg32ProjectPage({ project }: { project: Project }) {
           <div className="prg32-hero-grid">
             <div className="prg32-hero-copy">
               <p className="eyebrow"><span className="eyebrow-dot" />PRG32 / embedded education</p>
-              <p className="prg32-official-name">Platform for RISC-V Gaming Development (32-bit)</p>
+              <p className="prg32-official-name">PRG32 - Platform for RISC-V Gaming development (32 bit)</p>
               <h1>Learn systems<br /><em>by building games.</em></h1>
               <p className="prg32-hero-lede">{project.summary}</p>
               <div className="prg32-hero-actions">

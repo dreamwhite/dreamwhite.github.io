@@ -3,7 +3,16 @@ import './globals.css';
 import { SiteFooter } from '../components/site-footer';
 import { SiteHeader } from '../components/site-header';
 import { BackToTop } from '../components/back-to-top';
+import { socialProfileUrls } from '../content/profile';
 import { defaultDescription, defaultTitle, siteName, siteUrl, socialDescription, socialImage } from '../lib/metadata';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Ivan Cafiero',
+  url: siteUrl,
+  sameAs: socialProfileUrls,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -33,6 +42,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" data-theme="dark" suppressHydrationWarning>
       <head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
         <script
           dangerouslySetInnerHTML={{
             __html: `(() => { try { const stored = localStorage.getItem('theme'); const light = stored === 'light' || (!stored && window.matchMedia('(prefers-color-scheme: light)').matches); document.documentElement.dataset.theme = light ? 'light' : 'dark'; } catch {} })();`,
