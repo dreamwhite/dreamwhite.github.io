@@ -1,12 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-
-type CarouselState = {
-  activeIndex: number;
-  canMovePrevious: boolean;
-  canMoveNext: boolean;
-};
+import { getCarouselState, getNextCarouselIndex, type CarouselState } from '../lib/carousel';
 
 /** Provides scroll state and keyboard-friendly controls for a horizontal card rail. */
 export function useCarousel(itemCount: number) {
@@ -24,18 +19,9 @@ export function useCarousel(itemCount: number) {
     const cards = Array.from(carousel.querySelectorAll<HTMLElement>('[data-project-card]'));
     if (cards.length === 0) return;
 
-    const currentOffset = carousel.scrollLeft;
-    const closestIndex = cards.reduce((closest, card, index) => {
-      const closestDistance = Math.abs(cards[closest].offsetLeft - currentOffset);
-      const distance = Math.abs(card.offsetLeft - currentOffset);
-      return distance < closestDistance ? index : closest;
-    }, 0);
-
-    setState({
-      activeIndex: closestIndex,
-      canMovePrevious: currentOffset > 2,
-      canMoveNext: currentOffset < carousel.scrollWidth - carousel.clientWidth - 2,
-    });
+    const containerLeft = carousel.getBoundingClientRect().left;
+    const offsets = cards.map((card) => card.getBoundingClientRect().left - containerLeft + carousel.scrollLeft);
+    setState(getCarouselState(offsets, carousel.scrollLeft, carousel.clientWidth, carousel.scrollWidth));
   }, []);
 
   useEffect(() => {
@@ -53,8 +39,9 @@ export function useCarousel(itemCount: number) {
   }, [updateCarouselState]);
 
   const move = useCallback((direction: -1 | 1) => {
-    const nextIndex = Math.max(0, Math.min(itemCount - 1, state.activeIndex + direction));
-    const card = carouselRef.current?.querySelectorAll<HTMLElement>('[data-project-card]')[nextIndex];
+    const cards = carouselRef.current?.querySelectorAll<HTMLElement>('[data-project-card]');
+    const nextIndex = getNextCarouselIndex(state.activeIndex, cards?.length ?? itemCount, direction);
+    const card = cards?.[nextIndex];
     card?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
   }, [itemCount, state.activeIndex]);
 

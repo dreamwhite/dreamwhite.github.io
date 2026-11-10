@@ -1,9 +1,11 @@
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { projectSlugs, projects, projectCards } from '../src/content/projects';
+import { readWritingSourceDocuments, validateWritingSourceDocuments } from '../src/lib/writing-source';
 
 const errors: string[] = [];
 const projectSlugSet = new Set(projects.map((project) => project.slug));
+const writingDocuments = readWritingSourceDocuments();
 
 if (projectSlugSet.size !== projects.length) {
   errors.push('Project slugs must be unique.');
@@ -32,9 +34,15 @@ if (new Set(projectCards.map((project) => project.slug)).size !== projectCards.l
   errors.push('Project card slugs must be unique.');
 }
 
+errors.push(...validateWritingSourceDocuments(writingDocuments, {
+  publicDirectory: path.join(process.cwd(), 'public'),
+  writingSlugs: new Set(writingDocuments.map((document) => document.slug)),
+  projectSlugs: projectSlugSet,
+}));
+
 if (errors.length > 0) {
   console.error(errors.map((error) => `✖ ${error}`).join('\n'));
   process.exitCode = 1;
 } else {
-  console.log(`✓ Validated ${projects.length} case studies and ${projectCards.length} project cards.`);
+  console.log(`✓ Validated ${projects.length} case studies, ${projectCards.length} project cards and ${writingDocuments.length} Markdown posts.`);
 }

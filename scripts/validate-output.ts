@@ -1,22 +1,20 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { extractAttributeValues, extractCssUrlReferences, extractSrcsetCandidates, isLocalReference, outputPathForAsset, outputPathForHref } from '../src/lib/static-output';
 
 const outputDirectory = path.join(process.cwd(), 'out');
 const errors: string[] = [];
 const siteOrigin = 'https://dreamwhite.dev';
 
-function collectHtmlFiles(directory: string): string[] {
+function collectFiles(directory: string, predicate: (fileName: string) => boolean): string[] {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
     const entryPath = path.join(directory, entry.name);
-    return entry.isDirectory() ? collectHtmlFiles(entryPath) : entry.name.endsWith('.html') ? [entryPath] : [];
+    return entry.isDirectory() ? collectFiles(entryPath, predicate) : predicate(entry.name) ? [entryPath] : [];
   });
 }
 
-function outputPathForHref(href: string) {
-  const cleanHref = decodeURIComponent(href.split(/[?#]/, 1)[0]);
-  if (cleanHref === '/') return path.join(outputDirectory, 'index.html');
-  if (path.extname(cleanHref)) return path.join(outputDirectory, cleanHref.slice(1));
-  return path.join(outputDirectory, cleanHref.replace(/^\//, ''), 'index.html');
+function collectHtmlFiles(directory: string) {
+  return collectFiles(directory, (fileName) => fileName.endsWith('.html'));
 }
 
 function collectCanonicalUrls(html: string, htmlFile: string) {
@@ -68,12 +66,35 @@ if (!fs.existsSync(path.join(outputDirectory, 'index.html'))) {
   for (const htmlFile of collectHtmlFiles(outputDirectory)) {
     const html = fs.readFileSync(htmlFile, 'utf8');
     canonicalUrls.push(...collectCanonicalUrls(html, htmlFile));
-    const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]);
+    const hrefs = extractAttributeValues(html, 'href');
 
     for (const href of hrefs) {
-      if (!href.startsWith('/') || href.startsWith('//') || href.startsWith('/#')) continue;
-      const target = outputPathForHref(href);
+      if (!isLocalReference(href)) continue;
+      const target = outputPathForHref(outputDirectory, href);
       if (!fs.existsSync(target)) errors.push(`${path.relative(outputDirectory, htmlFile)} → missing ${href}`);
+    }
+
+    for (const source of extractAttributeValues(html, 'src')) {
+      if (!isLocalReference(source)) continue;
+      const target = outputPathForAsset(outputDirectory, htmlFile, source);
+      if (!fs.existsSync(target)) errors.push(`${path.relative(outputDirectory, htmlFile)} → missing src ${source}`);
+    }
+
+    for (const srcset of extractAttributeValues(html, 'srcset')) {
+      for (const source of extractSrcsetCandidates(srcset)) {
+        if (!isLocalReference(source)) continue;
+        const target = outputPathForAsset(outputDirectory, htmlFile, source);
+        if (!fs.existsSync(target)) errors.push(`${path.relative(outputDirectory, htmlFile)} → missing srcset ${source}`);
+      }
+    }
+  }
+
+  for (const cssFile of collectFiles(outputDirectory, (fileName) => fileName.endsWith('.css'))) {
+    const css = fs.readFileSync(cssFile, 'utf8');
+    for (const reference of extractCssUrlReferences(css)) {
+      if (!isLocalReference(reference)) continue;
+      const target = outputPathForAsset(outputDirectory, cssFile, reference);
+      if (!fs.existsSync(target)) errors.push(`${path.relative(outputDirectory, cssFile)} → missing CSS asset ${reference}`);
     }
   }
   validateRobotsAndSitemap(canonicalUrls);

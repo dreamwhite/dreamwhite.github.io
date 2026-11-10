@@ -1,6 +1,3 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
@@ -8,8 +5,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import rehypeStringify from 'rehype-stringify';
-
-const writingDirectory = path.join(process.cwd(), 'content', 'writing');
+import { readWritingSourceDocuments } from './writing-source';
 
 export type WritingPost = {
   slug: string;
@@ -52,13 +48,8 @@ function getExcerpt(content: string) {
 }
 
 export function getAllWritingPosts(): WritingPost[] {
-  return fs
-    .readdirSync(writingDirectory)
-    .filter((fileName) => fileName.endsWith('.md'))
-    .map((fileName) => {
-      const slug = fileName.replace(/\.md$/, '');
-      const source = fs.readFileSync(path.join(writingDirectory, fileName), 'utf8');
-      const { data, content } = matter(source);
+  return readWritingSourceDocuments()
+    .map(({ slug, data, content }) => {
       const category = Array.isArray(data.categories) ? data.categories[0] : data.categories ?? 'notes';
 
       return {
@@ -105,14 +96,23 @@ function headingId(value: string, usedIds: Set<string>) {
 function getWritingHeadings(content: string): WritingHeading[] {
   const headings: WritingHeading[] = [];
   const usedIds = new Set<string>();
-  let inFence = false;
+  let fenceCharacter = '';
+  let fenceLength = 0;
 
   for (const line of content.split('\n')) {
-    if (/^\s*```/.test(line)) {
-      inFence = !inFence;
+    const fence = /^\s*(`{3,}|~{3,})/.exec(line);
+    if (fence) {
+      const nextFenceCharacter = fence[1][0];
+      if (!fenceCharacter) {
+        fenceCharacter = nextFenceCharacter;
+        fenceLength = fence[1].length;
+      } else if (nextFenceCharacter === fenceCharacter && fence[1].length >= fenceLength) {
+        fenceCharacter = '';
+        fenceLength = 0;
+      }
       continue;
     }
-    if (inFence) continue;
+    if (fenceCharacter) continue;
 
     const match = /^(#{1,3})\s+(.+?)\s*$/.exec(line);
     if (!match) continue;

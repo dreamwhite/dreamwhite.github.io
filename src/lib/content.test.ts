@@ -19,3 +19,12 @@ test('keeps safe external and mail links', async () => {
   assert.match(html, /href="https:\/\/example\.com"/);
   assert.match(html, /href="mailto:test@example\.com"/);
 });
+
+test('generates stable unique heading ids and ignores fenced headings', async () => {
+  const { html, headings } = await renderMarkdown('## Same heading\n\n~~~md\n## Ignored heading\n~~~\n\n## Same heading');
+
+  assert.deepEqual(headings.map((heading) => heading.id), ['same-heading', 'same-heading-2']);
+  assert.match(html, /<h2 id="same-heading">Same heading<\/h2>/);
+  assert.match(html, /<h2 id="same-heading-2">Same heading<\/h2>/);
+  assert.doesNotMatch(html, /<h2[^>]*>Ignored heading<\/h2>/);
+});
